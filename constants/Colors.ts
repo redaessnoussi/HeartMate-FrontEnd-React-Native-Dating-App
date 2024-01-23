@@ -9,6 +9,7 @@ const Colors = {
   white: '#FFFFFF',
   darkGrey: '#B9B9B9',
   grey: '#CACACA',
+  glassGrey: '#9e9e9e80',
   softGrey: '#E7E7E7',
 };
 
