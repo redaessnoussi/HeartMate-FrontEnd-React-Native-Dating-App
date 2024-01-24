@@ -44,7 +44,21 @@ export default function RootLayout() {
     return null;
   }
 
-  return <RootLayoutNav />;
+  // Theme with the loaded fonts
+  const theme = {
+    ...DefaultTheme, // You can also use DarkTheme or create your custom theme
+    fonts: {
+      regular: { fontFamily: "PoppinsRegular", fontWeight: "normal" },
+      bold: { fontFamily: "PoppinsBold", fontWeight: "bold" },
+      semiBold: { fontFamily: "PoppinsSemiBold", fontWeight: "500" },
+    },
+  };
+
+  return (
+    <ThemeProvider value={theme}>
+      <RootLayoutNav />
+    </ThemeProvider>
+  );
 }
 
 function RootLayoutNav() {
