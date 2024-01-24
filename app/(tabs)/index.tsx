@@ -18,6 +18,7 @@ import { useEffect, useRef, useState } from "react";
 export default function TabOneScreen() {
   const swipeBtn = useRef(new Animated.ValueXY()).current;
   const [viewWidth, setviewWidth] = useState(0);
+  const [hasSwiped, setHasSwiped] = useState(false);
 
   const imageAvatars: number[] = [
     require("../../assets/images/man-face-1.jpg"),
@@ -37,6 +38,10 @@ export default function TabOneScreen() {
       const swipeWidth = Math.floor(viewWidth - 72); // Maximum allowed translation (adjust as needed)
       const newX = Math.max(0, Math.min(gesture.dx, swipeWidth));
       swipeBtn.setValue({ x: newX, y: 0 });
+      if (newX === swipeWidth && !hasSwiped) {
+        nextPage();
+        setHasSwiped(true);
+      }
     },
     onPanResponderRelease: (_, gesture) => {
       Animated.timing(swipeBtn, {
@@ -44,17 +49,13 @@ export default function TabOneScreen() {
         duration: 0,
         useNativeDriver: false,
       }).start();
+      setHasSwiped(false);
     },
   });
 
-  const handleSwipe = () => {
+  const nextPage = () => {
     // Implement your logic when the button is swiped
-    console.log("Button swiped!");
-  };
-
-  const handleSwipeRelease = () => {
-    // Implement any logic when the swipe is released
-    console.log("Swipe released!");
+    console.log("Next Page");
   };
 
   return (
@@ -75,12 +76,21 @@ export default function TabOneScreen() {
           flex: 1,
           justifyContent: "flex-start",
           backgroundColor: Colors.white,
+          borderTopRightRadius: 80,
         }}
       >
         {/* Start: Header & Text */}
         <View style={{ marginBottom: 16 }}>
-          <Text style={{ fontSize: 36 }}>Connect with Heartfelt Vibes</Text>
-          <Text>
+          <Text
+            style={{
+              fontSize: 36,
+              fontFamily: "PoppinsBold",
+              color: Colors.darkBlack,
+            }}
+          >
+            Connect with Heartfelt Vibes
+          </Text>
+          <Text style={{ fontFamily: "PoppinsRegular" }}>
             Dive into a world of meaningful connections and vibrant social
             interactions. Your journey to genuine connections starts here!
           </Text>
@@ -113,8 +123,22 @@ export default function TabOneScreen() {
               ))}
             </View>
             <View style={{}}>
-              <Text style={{ fontSize: 18 }}>10K+ Users</Text>
-              <Text style={{ fontSize: 10 }}>
+              <Text
+                style={{
+                  fontSize: 18,
+                  fontFamily: "PoppinsBold",
+                  color: Colors.darkBlack,
+                }}
+              >
+                10K+ Users
+              </Text>
+              <Text
+                style={{
+                  fontSize: 10,
+                  color: Colors.red,
+                  fontFamily: "PoppinsRegular",
+                }}
+              >
                 have started their love adventure!
               </Text>
             </View>
@@ -130,6 +154,7 @@ export default function TabOneScreen() {
             backgroundColor: Colors.glassGrey,
             padding: 8,
             height: 72,
+            borderRadius: 40,
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
@@ -138,21 +163,21 @@ export default function TabOneScreen() {
         >
           <View style={{ width: "auto" }}>
             <Text
-              style={{ color: Colors.white, fontSize: 20, fontWeight: "bold" }}
+              style={{
+                color: Colors.white,
+                fontSize: 20,
+                fontFamily: "PoppinsBold",
+              }}
             >
               Get Started
             </Text>
           </View>
-          <TouchableOpacity
-            style={{ left: 8, position: "absolute" }}
-            onPress={handleSwipe}
-            onLongPress={handleSwipeRelease}
-          >
+          <TouchableOpacity style={{ left: 8, position: "absolute" }}>
             <Animated.View
               {...swipeBtnHandler.panHandlers}
               style={[swipeBtn.getLayout(), styles.slideBtn]}
             >
-              <Feather name="arrow-right" size={56} color={Colors.white} />
+              <Feather name="arrow-right" size={40} color={Colors.white} />
             </Animated.View>
           </TouchableOpacity>
         </View>
@@ -166,9 +191,22 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   slideBtn: {
     backgroundColor: Colors.darkPink,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     width: 56,
     height: 56,
+    borderRadius: 28,
     top: 0,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+
+    elevation: 10,
     transform: [{ translateX: 0 }, { translateY: 0 }], // Use transform property
   },
 });
