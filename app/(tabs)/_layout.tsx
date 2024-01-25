@@ -18,8 +18,9 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <Stack>
-      {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} /> */}
-    </Stack>
+    <Tabs>
+      <Tabs.Screen name="index" options={{ headerShown: false }} />
+      <Tabs.Screen name="secondTab" options={{ headerShown: false }} />
+    </Tabs>
   );
 }

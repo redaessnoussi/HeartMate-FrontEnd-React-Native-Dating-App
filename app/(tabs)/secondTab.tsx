@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
+import React from "react";
 
-export default function TabOneScreen() {
+const secondTab = () => {
   return (
-    <View style={{ flex: 1 }}>
-      <Text>Tab Index Page</Text>
+    <View>
+      <Text>secondTab</Text>
     </View>
   );
-}
+};
+
+export default secondTab;
 
 const styles = StyleSheet.create({});

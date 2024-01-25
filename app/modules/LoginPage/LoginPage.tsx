@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
+import React from "react";
 
-export default function TabOneScreen() {
+const LoginPage = () => {
   return (
-    <View style={{ flex: 1 }}>
-      <Text>Tab Index Page</Text>
+    <View>
+      <Text>LoginPage</Text>
     </View>
   );
-}
+};
+
+export default LoginPage;
 
 const styles = StyleSheet.create({});

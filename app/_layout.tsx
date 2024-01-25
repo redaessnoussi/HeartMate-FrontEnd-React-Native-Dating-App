@@ -6,8 +6,9 @@ import {
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
-import { useEffect } from "react";
-import { useColorScheme } from "react-native";
+import { useEffect, useState } from "react";
+import { View, useColorScheme } from "react-native";
+import SplashPage from "./modules/SplashPage/SplashPage";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -23,6 +24,7 @@ export const unstable_settings = {
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  const [loggedIn, setLoggedIn] = useState(false);
   const [loaded, error] = useFonts({
     PoppinsRegular: require("../assets/fonts/Poppins-Regular.ttf"),
     PoppinsBold: require("../assets/fonts/Poppins-Bold.ttf"),
@@ -56,7 +58,7 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={theme}>
-      <RootLayoutNav />
+      {loggedIn ? <RootLayoutNav /> : <SplashPage />}
     </ThemeProvider>
   );
 }
@@ -67,7 +69,7 @@ function RootLayoutNav() {
   return (
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      {/* <Stack.Screen name="(modals)/modal" options={{ presentation: "modal" }} /> */}
+      {/* <Stack.Screen name="(tabs)" /> */}
     </Stack>
   );
 }
