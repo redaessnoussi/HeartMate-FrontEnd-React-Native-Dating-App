@@ -2,6 +2,7 @@ import {
   Animated,
   Image,
   PanResponder,
+  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -10,14 +11,13 @@ import {
 import Colors from "../../../constants/Colors";
 import { Feather } from "@expo/vector-icons";
 import { useRef, useState } from "react";
-import { useNavigation } from "expo-router";
+import { useRouter } from "expo-router";
 
 const splashPage = () => {
   const swipeBtn = useRef(new Animated.ValueXY()).current;
   const [viewWidth, setviewWidth] = useState(0);
   const [hasSwiped, setHasSwiped] = useState(false);
-
-  const navigation = useNavigation();
+  const router = useRouter();
 
   const imgAvatars: number[] = [
     require("../../../assets/images/man-face-1.jpg"),
@@ -56,19 +56,20 @@ const splashPage = () => {
   const nextPage = () => {
     // Implement your logic when the button is swiped
     console.log("Next Page");
+    router.push("/modules/LoginPage/LoginPage");
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: Colors.subtlePink }}>
-      {/* Start: Top Image */}
+    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.subtlePink }}>
+      {/* Top Image */}
       <View style={{ flex: 1 }}>
-        <Image
+        {/* <Image
           source={require("../../../assets/images/happy-couple-splash-screen.jpg")}
           style={{ height: "100%", width: "100%" }}
-        />
+        /> */}
       </View>
 
-      {/* Start: Header & Description Section */}
+      {/* Header & Description Section */}
       <View
         style={{
           paddingHorizontal: 32,
@@ -78,7 +79,7 @@ const splashPage = () => {
           backgroundColor: Colors.white,
         }}
       >
-        {/* Start: Header & Text */}
+        {/* Header & Text */}
         <View>
           <Text style={styles.txtHeader}>Connect with Heartfelt Vibes</Text>
           <Text style={{ fontFamily: "PoppinsRegular" }}>
@@ -87,7 +88,7 @@ const splashPage = () => {
           </Text>
         </View>
 
-        {/* Start: Users Stats */}
+        {/* Users Stats */}
         <View
           style={{
             display: "flex",
@@ -131,7 +132,7 @@ const splashPage = () => {
           </View>
         </View>
 
-        {/* Start: Swipe Button */}
+        {/* Swipe Button */}
         <View onLayout={onViewLayout} style={styles.sliderContainer}>
           <View style={{ width: "auto" }}>
             <Text
@@ -154,7 +155,7 @@ const splashPage = () => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -1,14 +1,10 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
+import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
 import { useEffect, useState } from "react";
 import { View, useColorScheme } from "react-native";
 import SplashPage from "./modules/SplashPage/SplashPage";
+import LoginPage from "./modules/LoginPage/LoginPage";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -58,7 +54,7 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={theme}>
-      {loggedIn ? <RootLayoutNav /> : <SplashPage />}
+      <LoginPage />
     </ThemeProvider>
   );
 }
@@ -69,7 +65,6 @@ function RootLayoutNav() {
   return (
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      {/* <Stack.Screen name="(tabs)" /> */}
     </Stack>
   );
 }
