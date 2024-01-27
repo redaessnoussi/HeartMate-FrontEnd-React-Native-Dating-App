@@ -30,7 +30,6 @@ const LoginPage = () => {
       {/* Logo & Headline */}
       <View
         style={{
-          flex: 1,
           justifyContent: "center",
           alignItems: "center",
         }}
@@ -67,6 +66,7 @@ const LoginPage = () => {
             color: Colors.darkBlack,
             fontFamily: "PoppinsRegular",
             fontSize: 14,
+            marginBottom: 10,
           }}
         >
           Forge Bonds, Find Bliss.
@@ -102,7 +102,7 @@ const LoginPage = () => {
         {/* Horizontal Barrier */}
         <View
           style={{
-            borderBottomWidth: 3,
+            borderBottomWidth: 2,
             borderBottomColor: Colors.softGrey,
             marginVertical: 20,
           }}
