@@ -13,11 +13,13 @@ import React, { useState } from "react";
 import Colors from "../../../constants/Colors";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
+import RegisterForm from "./RegisterForm/RegisterForm";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
   const [isChecked, setChecked] = useState(false);
 
   const toggleShowPassword = () => {
@@ -131,11 +133,11 @@ const LoginPage = () => {
         </View>
 
         {/* Credentials Inputs */}
-        <View style={{ flex: 2, gap: 16 }}>
+        <View style={{ flex: 2, gap: 16, display: "none" }}>
           <Text
             style={{ color: Colors.darkBlack, fontFamily: "PoppinsSemiBold" }}
           >
-            Email or Username
+            Email
           </Text>
           <TextInput
             style={{
@@ -144,8 +146,8 @@ const LoginPage = () => {
               paddingVertical: 16,
               borderRadius: 8,
             }}
-            placeholder="Enter your email or username"
-            keyboardType="email-address"
+            placeholder="Enter your email"
+            keyboardType="default"
             autoCapitalize="none"
             value={email}
             onChangeText={(text) => setEmail(text)}
@@ -234,6 +236,9 @@ const LoginPage = () => {
             </Text>
           </TouchableOpacity>
         </View>
+
+        {/* Registration Form */}
+        <RegisterForm />
 
         {/* Social Media Login */}
         <View style={{ gap: 10 }}>
