@@ -32,7 +32,7 @@ const LoginPage = () => {
       keyboardShouldPersistTaps="handled"
       style={{ flex: 1 }}
     >
-      <SafeAreaView
+      <View
         style={{
           flex: 1,
           paddingHorizontal: 32,
@@ -312,7 +312,7 @@ const LoginPage = () => {
             </TouchableOpacity>
           </View>
         </View>
-      </SafeAreaView>
+      </View>
     </ScrollView>
   );
 };
