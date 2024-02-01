@@ -37,6 +37,7 @@ const LoginPage = () => {
           flex: 1,
           paddingHorizontal: 32,
           paddingVertical: 48,
+          backgroundColor: Colors.white,
         }}
       >
         {/* Logo & Headline */}
@@ -57,7 +58,7 @@ const LoginPage = () => {
             <Text
               style={{
                 color: Colors.darkPink,
-                fontFamily: "PoppinsBold",
+                fontFamily: "RobotoBold",
                 fontSize: 24,
               }}
             >
@@ -66,7 +67,7 @@ const LoginPage = () => {
             <Text
               style={{
                 color: Colors.pink,
-                fontFamily: "PoppinsBold",
+                fontFamily: "RobotoBold",
                 fontSize: 24,
               }}
             >
@@ -76,7 +77,7 @@ const LoginPage = () => {
           <Text
             style={{
               color: Colors.darkBlack,
-              fontFamily: "PoppinsRegular",
+              fontFamily: "RobotoRegular",
               fontSize: 14,
               marginBottom: 20,
             }}
@@ -107,7 +108,7 @@ const LoginPage = () => {
                 elevation: 3,
               }}
             >
-              <Text style={{ color: Colors.white, fontFamily: "PoppinsBold" }}>
+              <Text style={{ color: Colors.white, fontFamily: "RobotoBold" }}>
                 Login
               </Text>
             </TouchableOpacity>
@@ -119,7 +120,7 @@ const LoginPage = () => {
                 borderRadius: 20,
               }}
             >
-              <Text style={{ fontFamily: "PoppinsBold" }}>Register</Text>
+              <Text style={{ fontFamily: "RobotoBold" }}>Register</Text>
             </TouchableOpacity>
           </View>
           {/* Horizontal Barrier */}
@@ -133,10 +134,8 @@ const LoginPage = () => {
         </View>
 
         {/* Credentials Inputs */}
-        <View style={{ flex: 2, gap: 16, display: "none" }}>
-          <Text
-            style={{ color: Colors.darkBlack, fontFamily: "PoppinsSemiBold" }}
-          >
+        <View style={{ flex: 2, gap: 16 }}>
+          <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
             Email
           </Text>
           <TextInput
@@ -153,9 +152,7 @@ const LoginPage = () => {
             onChangeText={(text) => setEmail(text)}
           />
 
-          <Text
-            style={{ color: Colors.darkBlack, fontFamily: "PoppinsSemiBold" }}
-          >
+          <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
             Password
           </Text>
           <View
@@ -204,7 +201,7 @@ const LoginPage = () => {
             <Text
               style={{
                 color: Colors.red,
-                fontFamily: "PoppinsRegular",
+                fontFamily: "RobotoRegular",
                 fontSize: 12,
               }}
             >
@@ -231,7 +228,7 @@ const LoginPage = () => {
               elevation: 3,
             }}
           >
-            <Text style={{ color: Colors.white, fontFamily: "PoppinsBold" }}>
+            <Text style={{ color: Colors.white, fontFamily: "RobotoBold" }}>
               Sign In
             </Text>
           </TouchableOpacity>
@@ -245,7 +242,7 @@ const LoginPage = () => {
           <Text
             style={{
               color: Colors.darkBlack,
-              fontFamily: "PoppinsSemiBold",
+              fontFamily: "RobotoMedium",
               textAlign: "center",
               marginTop: 20,
             }}
@@ -278,7 +275,7 @@ const LoginPage = () => {
             >
               <FontAwesome5 name="google" size={24} color={Colors.darkPink} />
               <Text
-                style={{ color: Colors.darkPink, fontFamily: "PoppinsBold" }}
+                style={{ color: Colors.darkPink, fontFamily: "RobotoBold" }}
               >
                 Google
               </Text>
@@ -305,7 +302,7 @@ const LoginPage = () => {
             >
               <FontAwesome name="facebook" size={24} color={Colors.darkPink} />
               <Text
-                style={{ color: Colors.darkPink, fontFamily: "PoppinsBold" }}
+                style={{ color: Colors.darkPink, fontFamily: "RobotoBold" }}
               >
                 Facebook
               </Text>
