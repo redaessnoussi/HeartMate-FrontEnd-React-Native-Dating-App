@@ -5,7 +5,9 @@ export default function TabLayout() {
   return (
     <Tabs>
       <Tabs.Screen name="index" options={{ headerShown: false }} />
-      <Tabs.Screen name="secondTab" options={{ headerShown: false }} />
+      <Tabs.Screen name="matches" options={{ headerShown: false }} />
+      <Tabs.Screen name="messages" options={{ headerShown: false }} />
+      <Tabs.Screen name="profile" options={{ headerShown: false }} />
     </Tabs>
     // <SplashPage />
   );

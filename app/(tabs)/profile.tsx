@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const secondTab = () => {
+const profileTab = () => {
   return (
     <View>
-      <Text>secondTab</Text>
+      <Text>profileTab</Text>
     </View>
   );
 };
 
-export default secondTab;
+export default profileTab;
 
 const styles = StyleSheet.create({});
