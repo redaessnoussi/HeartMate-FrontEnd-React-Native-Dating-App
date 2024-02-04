@@ -3,24 +3,19 @@ import {
   Text,
   View,
   ScrollView,
-  SafeAreaView,
   ImageBackground,
-  Button,
   TouchableOpacity,
 } from "react-native";
 import Colors from "../../constants/Colors";
 import { LinearGradient } from "expo-linear-gradient";
 import { useEffect, useState } from "react";
 import MasonryList from "@react-native-seoul/masonry-list";
-import {
-  FontAwesome5,
-  Ionicons,
-  Octicons,
-  SimpleLineIcons,
-} from "@expo/vector-icons";
+import { Ionicons, Octicons, SimpleLineIcons } from "@expo/vector-icons";
+import Discover from "../modules/Discover/discover";
 
 export default function TabOneScreen() {
   const [imageHeights, setImageHeights] = useState<number[]>([]);
+  const [discover, setdiscover] = useState(true);
 
   const generateSize = () => {
     const sizes = userProfiles.map(() => {
@@ -31,14 +26,10 @@ export default function TabOneScreen() {
 
   const userProfiles: Array<{ name: string; activity: string; img: any }> = [
     {
-      name: "Jeremy Owen",
-      activity: "Do you like a traveling man?",
-      img: require("../../assets/images/man-face-1.jpg"),
-    },
-    {
-      name: "Jannette Louis",
-      activity: "I’ll cook a delicious food for you!",
-      img: require("../../assets/images/smiling-1.jpg"),
+      name: "Michael Rodriguez",
+      activity:
+        "Passionate about fitness and outdoor activities. Let’s stay active together!",
+      img: require("../../assets/images/smiling-3.jpg"),
     },
     {
       name: "Amanda Smith",
@@ -46,10 +37,9 @@ export default function TabOneScreen() {
       img: require("../../assets/images/smiling-2.jpg"),
     },
     {
-      name: "Michael Rodriguez",
-      activity:
-        "Passionate about fitness and outdoor activities. Let’s stay active together!",
-      img: require("../../assets/images/smiling-3.jpg"),
+      name: "Jannette Louis",
+      activity: "I’ll cook a delicious food for you!",
+      img: require("../../assets/images/smiling-1.jpg"),
     },
     {
       name: "Sophia Turner",
@@ -68,6 +58,11 @@ export default function TabOneScreen() {
       activity:
         "Bookworm and coffee lover. Let’s get lost in a good story together.",
       img: require("../../assets/images/smiling-2.jpg"),
+    },
+    {
+      name: "Jeremy Owen",
+      activity: "Do you like a traveling man?",
+      img: require("../../assets/images/man-face-1.jpg"),
     },
   ];
 
@@ -92,7 +87,7 @@ export default function TabOneScreen() {
         </ImageBackground>
         <View
           style={{
-            paddingVertical: 16,
+            paddingVertical: 8,
             backgroundColor: Colors.white,
             flexDirection: "row",
             justifyContent: "space-between",
@@ -103,9 +98,10 @@ export default function TabOneScreen() {
             style={{
               fontSize: 12,
               color: Colors.darkBlack,
-              fontFamily: "PoppinsRegular",
+              fontFamily: "RobotoRegular",
               width: "80%",
             }}
+            numberOfLines={2}
           >
             {userProfile.activity}
           </Text>
@@ -147,7 +143,7 @@ export default function TabOneScreen() {
         >
           {/* location */}
           <View style={{ gap: 4 }}>
-            <Text style={{ fontSize: 16, fontFamily: "PoppinsSemiBold" }}>
+            <Text style={{ fontSize: 16, fontFamily: "RobotoMedium" }}>
               Your Location
             </Text>
             <TouchableOpacity>
@@ -198,7 +194,7 @@ export default function TabOneScreen() {
               borderRadius: 30,
             }}
           >
-            <Text style={{ color: Colors.white, fontFamily: "PoppinsBold" }}>
+            <Text style={{ color: Colors.white, fontFamily: "RobotoBold" }}>
               Post
             </Text>
           </TouchableOpacity>
@@ -212,29 +208,35 @@ export default function TabOneScreen() {
               borderRadius: 30,
             }}
           >
-            <Text
-              style={{ color: Colors.darkBlack, fontFamily: "PoppinsBold" }}
-            >
+            <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoBold" }}>
               Discover
             </Text>
           </TouchableOpacity>
         </View>
-
-        {/* Posts Items Section */}
-        <View
-          style={{
-            backgroundColor: Colors.white,
-            flex: 1,
-          }}
-        >
-          {/* Masonry List for Profile Cards */}
-          <MasonryList
-            style={{ gap: 16 }}
-            numColumns={2}
-            data={userProfiles}
-            renderItem={(item) => usersCards(item)}
-          />
-        </View>
+        {!discover ? (
+          <>
+            {/* Posts Items Section */}
+            <View
+              style={{
+                backgroundColor: Colors.white,
+                flex: 1,
+              }}
+            >
+              {/* Masonry List for Profile Cards */}
+              <MasonryList
+                style={{ gap: 16 }}
+                numColumns={2}
+                data={userProfiles}
+                renderItem={(item) => usersCards(item)}
+              />
+            </View>
+          </>
+        ) : (
+          <>
+            {/* Discover Items Section */}
+            <Discover userProfiles={userProfiles} />
+          </>
+        )}
       </View>
     </ScrollView>
   );
