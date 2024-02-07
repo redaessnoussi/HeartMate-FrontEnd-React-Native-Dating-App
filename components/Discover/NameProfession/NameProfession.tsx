@@ -3,7 +3,15 @@ import React from "react";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import Colors from "../../../constants/Colors";
 
-const NameProfession = () => {
+type NameProfessionProps = {
+  name: string;
+  profession: string;
+};
+
+const NameProfession: React.FC<NameProfessionProps> = ({
+  name,
+  profession,
+}) => {
   return (
     <>
       <View style={{ gap: 8 }}>
@@ -14,9 +22,9 @@ const NameProfession = () => {
             fontFamily: "RobotoBold",
           }}
         >
-          Mike Thompson, 25
+          {name}, 25
         </Text>
-        <Text style={{ color: Colors.white }}>Photogtapher</Text>
+        <Text style={{ color: Colors.white }}>{profession}</Text>
       </View>
       {/* Vertical Options Button */}
       <TouchableOpacity>

@@ -15,7 +15,7 @@ import Discover from "../modules/Discover/discover";
 
 export default function TabOneScreen() {
   const [imageHeights, setImageHeights] = useState<number[]>([]);
-  const [discover, setdiscover] = useState(true);
+  const [discover, setdiscover] = useState(false);
 
   const generateSize = () => {
     const sizes = userProfiles.map(() => {
@@ -24,45 +24,51 @@ export default function TabOneScreen() {
     setImageHeights(sizes);
   };
 
-  const userProfiles: Array<{ name: string; activity: string; img: any }> = [
+  const userProfiles: Array<{
+    name: string;
+    activity: string;
+    profession: string;
+    img: any;
+  }> = [
     {
       name: "Michael Rodriguez",
       activity:
         "Passionate about fitness and outdoor activities. Let’s stay active together!",
+      profession: "Lawyer",
       img: require("../../assets/images/smiling-3.jpg"),
     },
     {
       name: "Amanda Smith",
       activity: "Adventurous spirit seeking a partner to explore the world.",
+      profession: "Doctor",
       img: require("../../assets/images/smiling-2.jpg"),
     },
     {
       name: "Jannette Louis",
       activity: "I’ll cook a delicious food for you!",
+      profession: "Photographer",
       img: require("../../assets/images/smiling-1.jpg"),
     },
     {
       name: "Sophia Turner",
       activity:
         "Art enthusiast and movie lover. Looking for someone to share my passions with.",
+      profession: "Teacher",
       img: require("../../assets/images/smiling-4.jpg"),
     },
     {
       name: "David Foster",
       activity:
         "Tech geek and aspiring chef. Let me code you a website and cook you a meal!",
+      profession: "Nurse",
       img: require("../../assets/images/smiling-1.jpg"),
     },
     {
-      name: "Emma Williams",
+      name: "Michael Rodriguez",
       activity:
-        "Bookworm and coffee lover. Let’s get lost in a good story together.",
-      img: require("../../assets/images/smiling-2.jpg"),
-    },
-    {
-      name: "Jeremy Owen",
-      activity: "Do you like a traveling man?",
-      img: require("../../assets/images/man-face-1.jpg"),
+        "Passionate about fitness and outdoor activities. Let’s stay active together!",
+      profession: "Lawyer",
+      img: require("../../assets/images/smiling-3.jpg"),
     },
   ];
 
