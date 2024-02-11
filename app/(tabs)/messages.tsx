@@ -187,8 +187,7 @@ const messagesTab = () => {
       <View
         style={{
           flex: 1,
-          paddingHorizontal: 32,
-          paddingVertical: 64,
+          padding: 32,
         }}
       >
         {/* Top Header Section */}
