@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import Colors from "../../../constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
+import { Link } from "expo-router";
 
 interface User {
   firstName: string;
@@ -26,6 +27,8 @@ interface msgOverviewProps {
 
 const MessageOverview: React.FC<msgOverviewProps> = ({ userData }) => {
   const firstName = userData.firstName;
+  const lastName = userData.lastName;
+  const fullName = `${firstName} ${lastName}`;
   const msgText = userData.message.text;
   const timestamp = userData.message.timestamp;
   const profileImage = userData.imgProfile;
@@ -36,45 +39,47 @@ const MessageOverview: React.FC<msgOverviewProps> = ({ userData }) => {
   const uri = userData.story.uri;
 
   return (
-    <TouchableOpacity style={styles.container}>
-      {/* User Image Profile */}
-      <Image
-        source={profileImage}
-        style={[
-          styles.profileImage,
-          {
-            borderColor: hasStory ? Colors.red : Colors.white,
-            borderWidth: hasStory ? 3 : 0,
-          },
-        ]}
-      />
-      {/* Message Content */}
-      <View style={styles.messageContent}>
-        <Text style={styles.username}>{firstName}</Text>
-        <View style={styles.messageRow}>
-          {/* show icon if message is unread */}
-          {!msgRead && (
-            <View style={styles.unreadIndicator}>
-              <Ionicons
-                name="checkmark-done"
-                size={24}
-                color={Colors.darkGrey}
-              />
+    <Link href={`/MessageConversation/2`} asChild>
+      <TouchableOpacity style={styles.container}>
+        {/* User Image Profile */}
+        <Image
+          source={profileImage}
+          style={[
+            styles.profileImage,
+            {
+              borderColor: hasStory ? Colors.red : Colors.white,
+              borderWidth: hasStory ? 3 : 0,
+            },
+          ]}
+        />
+        {/* Message Content */}
+        <View style={styles.messageContent}>
+          <Text style={styles.username}>{firstName}</Text>
+          <View style={styles.messageRow}>
+            {/* show icon if message is unread */}
+            {!msgRead && (
+              <View style={styles.unreadIndicator}>
+                <Ionicons
+                  name="checkmark-done"
+                  size={24}
+                  color={Colors.darkGrey}
+                />
+              </View>
+            )}
+            <Text>{msgText}</Text>
+          </View>
+        </View>
+
+        <View style={styles.timestampContainer}>
+          <Text style={styles.timestamp}>{timestamp}</Text>
+          {unreadCount > 0 && (
+            <View style={styles.badge}>
+              <Text style={styles.badgeText}>{unreadCount}</Text>
             </View>
           )}
-          <Text>{msgText}</Text>
         </View>
-      </View>
-
-      <View style={styles.timestampContainer}>
-        <Text style={styles.timestamp}>{timestamp}</Text>
-        {unreadCount > 0 && (
-          <View style={styles.badge}>
-            <Text style={styles.badgeText}>{unreadCount}</Text>
-          </View>
-        )}
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </Link>
   );
 };
 
