@@ -58,7 +58,7 @@ const LoginPage = () => {
             <Text
               style={{
                 color: Colors.darkPink,
-                fontFamily: "RobotoBold",
+                fontFamily: "PoppinsBold",
                 fontSize: 24,
               }}
             >
@@ -67,7 +67,7 @@ const LoginPage = () => {
             <Text
               style={{
                 color: Colors.pink,
-                fontFamily: "RobotoBold",
+                fontFamily: "PoppinsBold",
                 fontSize: 24,
               }}
             >
@@ -77,7 +77,7 @@ const LoginPage = () => {
           <Text
             style={{
               color: Colors.darkBlack,
-              fontFamily: "RobotoRegular",
+              fontFamily: "PoppinsRegular",
               fontSize: 14,
               marginBottom: 20,
             }}
@@ -108,7 +108,7 @@ const LoginPage = () => {
                 elevation: 3,
               }}
             >
-              <Text style={{ color: Colors.white, fontFamily: "RobotoBold" }}>
+              <Text style={{ color: Colors.white, fontFamily: "PoppinsBold" }}>
                 Login
               </Text>
             </TouchableOpacity>
@@ -120,7 +120,7 @@ const LoginPage = () => {
                 borderRadius: 20,
               }}
             >
-              <Text style={{ fontFamily: "RobotoBold" }}>Register</Text>
+              <Text style={{ fontFamily: "PoppinsBold" }}>Register</Text>
             </TouchableOpacity>
           </View>
           {/* Horizontal Barrier */}
@@ -135,7 +135,9 @@ const LoginPage = () => {
 
         {/* Credentials Inputs */}
         <View style={{ flex: 2, gap: 16 }}>
-          <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+          <Text
+            style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}
+          >
             Email
           </Text>
           <TextInput
@@ -152,7 +154,9 @@ const LoginPage = () => {
             onChangeText={(text) => setEmail(text)}
           />
 
-          <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+          <Text
+            style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}
+          >
             Password
           </Text>
           <View
@@ -201,7 +205,7 @@ const LoginPage = () => {
             <Text
               style={{
                 color: Colors.red,
-                fontFamily: "RobotoRegular",
+                fontFamily: "PoppinsRegular",
                 fontSize: 12,
               }}
             >
@@ -228,7 +232,7 @@ const LoginPage = () => {
               elevation: 3,
             }}
           >
-            <Text style={{ color: Colors.white, fontFamily: "RobotoBold" }}>
+            <Text style={{ color: Colors.white, fontFamily: "PoppinsBold" }}>
               Sign In
             </Text>
           </TouchableOpacity>
@@ -242,7 +246,7 @@ const LoginPage = () => {
           <Text
             style={{
               color: Colors.darkBlack,
-              fontFamily: "RobotoMedium",
+              fontFamily: "PoppinsMedium",
               textAlign: "center",
               marginTop: 20,
             }}
@@ -275,7 +279,7 @@ const LoginPage = () => {
             >
               <FontAwesome5 name="google" size={24} color={Colors.darkPink} />
               <Text
-                style={{ color: Colors.darkPink, fontFamily: "RobotoBold" }}
+                style={{ color: Colors.darkPink, fontFamily: "PoppinsBold" }}
               >
                 Google
               </Text>
@@ -302,7 +306,7 @@ const LoginPage = () => {
             >
               <FontAwesome name="facebook" size={24} color={Colors.darkPink} />
               <Text
-                style={{ color: Colors.darkPink, fontFamily: "RobotoBold" }}
+                style={{ color: Colors.darkPink, fontFamily: "PoppinsBold" }}
               >
                 Facebook
               </Text>

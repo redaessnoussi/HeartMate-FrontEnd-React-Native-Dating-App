@@ -82,7 +82,7 @@ const splashPage = () => {
         {/* Header & Text */}
         <View>
           <Text style={styles.txtHeader}>Connect with Heartfelt Vibes</Text>
-          <Text style={{ fontFamily: "RobotoRegular" }}>
+          <Text style={{ fontFamily: "PoppinsRegular" }}>
             Dive into a world of meaningful connections and vibrant social
             interactions. Your journey to genuine connections starts here!
           </Text>
@@ -125,7 +125,7 @@ const splashPage = () => {
               style={{
                 fontSize: 10,
                 color: Colors.red,
-                fontFamily: "RobotoRegular",
+                fontFamily: "PoppinsRegular",
               }}
             >
               have started their love adventure!
@@ -140,7 +140,7 @@ const splashPage = () => {
               style={{
                 color: Colors.white,
                 fontSize: 20,
-                fontFamily: "RobotoBold",
+                fontFamily: "PoppinsBold",
               }}
             >
               Get Started
@@ -166,12 +166,12 @@ const styles = StyleSheet.create({
   txtHeader: {
     fontSize: 36,
     lineHeight: 46,
-    fontFamily: "RobotoBold",
+    fontFamily: "PoppinsBold",
     color: Colors.darkBlack,
   },
   userStates: {
     fontSize: 18,
-    fontFamily: "RobotoBold",
+    fontFamily: "PoppinsBold",
     color: Colors.darkBlack,
     lineHeight: 20,
   },

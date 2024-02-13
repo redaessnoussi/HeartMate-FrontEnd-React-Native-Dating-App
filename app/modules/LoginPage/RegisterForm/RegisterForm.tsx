@@ -39,7 +39,7 @@ const RegisterForm = () => {
   return (
     <View style={{ flex: 2, gap: 16, display: "none" }}>
       {/* Full Name Section */}
-      <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+      <Text style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}>
         Full Name
       </Text>
       <TextInput
@@ -57,7 +57,7 @@ const RegisterForm = () => {
       />
 
       {/* Email or Username */}
-      <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+      <Text style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}>
         Email
       </Text>
       <TextInput
@@ -75,7 +75,7 @@ const RegisterForm = () => {
       />
 
       {/* Password Section */}
-      <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+      <Text style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}>
         Password
       </Text>
       <View
@@ -110,7 +110,7 @@ const RegisterForm = () => {
       </View>
 
       {/* Repeat Password Section */}
-      <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+      <Text style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}>
         Confirm Password
       </Text>
       <View
@@ -145,7 +145,7 @@ const RegisterForm = () => {
       </View>
 
       {/* Gender Section */}
-      <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+      <Text style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}>
         Gender
       </Text>
       <Picker
@@ -165,7 +165,7 @@ const RegisterForm = () => {
       </Picker>
 
       {/* Date of Birth Section */}
-      <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+      <Text style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}>
         Date of Birth
       </Text>
       <TextInput
@@ -183,7 +183,7 @@ const RegisterForm = () => {
       />
 
       {/* About Section */}
-      <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+      <Text style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}>
         About Me
       </Text>
       <TextInput
@@ -203,7 +203,7 @@ const RegisterForm = () => {
       />
 
       {/* Location Section */}
-      <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+      <Text style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}>
         Location
       </Text>
       <TextInput
@@ -223,7 +223,7 @@ const RegisterForm = () => {
       />
 
       {/* Gender Preferences Section */}
-      <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+      <Text style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}>
         Gender Preference
       </Text>
       <Picker
@@ -244,16 +244,16 @@ const RegisterForm = () => {
 
       {/* Age Range */}
       <View style={{ flexDirection: "row", gap: 10 }}>
-        <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+        <Text style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}>
           Age Range:
         </Text>
-        <Text style={{ color: Colors.darkPink, fontFamily: "RobotoMedium" }}>
+        <Text style={{ color: Colors.darkPink, fontFamily: "PoppinsMedium" }}>
           {ageMin}
         </Text>
-        <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+        <Text style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}>
           -
         </Text>
-        <Text style={{ color: Colors.darkPink, fontFamily: "RobotoMedium" }}>
+        <Text style={{ color: Colors.darkPink, fontFamily: "PoppinsMedium" }}>
           {ageMax}
         </Text>
       </View>
@@ -272,7 +272,7 @@ const RegisterForm = () => {
       />
 
       {/* Job Education Section */}
-      <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+      <Text style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}>
         Job/Education
       </Text>
       <TextInput
@@ -290,7 +290,7 @@ const RegisterForm = () => {
       />
 
       {/* Interest Hobbies Section */}
-      <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoMedium" }}>
+      <Text style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}>
         Interest/Hobbies
       </Text>
       <TextInput
@@ -328,7 +328,7 @@ const RegisterForm = () => {
           elevation: 3,
         }}
       >
-        <Text style={{ color: Colors.white, fontFamily: "RobotoBold" }}>
+        <Text style={{ color: Colors.white, fontFamily: "PoppinsBold" }}>
           Register
         </Text>
       </TouchableOpacity>

@@ -19,7 +19,7 @@ const MatchPercent = () => {
       }}
     >
       {(fill) => (
-        <Text style={{ color: Colors.white, fontFamily: "RobotoBold" }}>
+        <Text style={{ color: Colors.white, fontFamily: "PoppinsBold" }}>
           {fill}%
         </Text>
       )}
