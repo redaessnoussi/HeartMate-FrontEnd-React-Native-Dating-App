@@ -206,7 +206,7 @@ const messagesTab = () => {
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <AntDesign name="left" size={24} color={Colors.darkPink} />
           </TouchableOpacity>
-          <Text style={{ fontSize: 20, fontFamily: "RobotoBold" }}>
+          <Text style={{ fontSize: 20, fontFamily: "PoppinsBold" }}>
             Message
           </Text>
           <TouchableOpacity>
@@ -258,7 +258,11 @@ const messagesTab = () => {
           }}
         >
           <Text
-            style={{ fontSize: 16, fontFamily: "RobotoBold", marginBottom: 16 }}
+            style={{
+              fontSize: 16,
+              fontFamily: "PoppinsBold",
+              marginBottom: 16,
+            }}
           >
             Recent Matches
           </Text>
@@ -295,7 +299,7 @@ const messagesTab = () => {
                         <Text
                           style={{
                             color: Colors.white,
-                            fontFamily: "RobotoBold",
+                            fontFamily: "PoppinsBold",
                             fontSize: 18,
                           }}
                         >
@@ -360,7 +364,7 @@ const messagesTab = () => {
             <Text
               style={{
                 fontSize: 18,
-                fontFamily: "RobotoBold",
+                fontFamily: "PoppinsBold",
                 color: Colors.white,
               }}
             >
@@ -381,7 +385,7 @@ const messagesTab = () => {
               <Text
                 style={{
                   fontSize: 14,
-                  fontFamily: "RobotoBold",
+                  fontFamily: "PoppinsBold",
                   color: Colors.darkPink,
                 }}
               >
@@ -404,7 +408,7 @@ const messagesTab = () => {
             <Text
               style={{
                 fontSize: 18,
-                fontFamily: "RobotoBold",
+                fontFamily: "PoppinsBold",
                 color: Colors.white,
               }}
             >
@@ -425,7 +429,7 @@ const messagesTab = () => {
               <Text
                 style={{
                   fontSize: 14,
-                  fontFamily: "RobotoBold",
+                  fontFamily: "PoppinsBold",
                   color: Colors.darkPink,
                 }}
               >
