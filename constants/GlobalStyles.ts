@@ -4,9 +4,9 @@ import { StyleSheet } from "react-native";
 const createStylesheet = (styles: object) => StyleSheet.create(styles);
 
 // Font Weights
-const fontRegular = "RobotoRegular";
-const fontMedium = "RobotoMedium";
-const fontBold = "RobotoBold";
+const fontRegular = "PoppinsRegular";
+const fontMedium = "PoppinsSemiBold";
+const fontBold = "PoppinsBold";
 
 // Heading
 const Heading1 = createStylesheet({
