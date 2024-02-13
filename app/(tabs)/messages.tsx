@@ -12,9 +12,13 @@ import React, { useState } from "react";
 import Colors from "../../constants/Colors";
 import { AntDesign, FontAwesome5, SimpleLineIcons } from "@expo/vector-icons";
 import MessageOverview from "../../components/Message/MessageOverview/MessageOverview";
+import { useNavigation } from "expo-router";
 
 const messagesTab = () => {
   const [search, setSearch] = useState("");
+
+  const navigation = useNavigation();
+
   const users = [
     {
       firstName: "John",
@@ -199,7 +203,7 @@ const messagesTab = () => {
             marginBottom: 16,
           }}
         >
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
             <AntDesign name="left" size={24} color={Colors.darkPink} />
           </TouchableOpacity>
           <Text style={{ fontSize: 20, fontFamily: "RobotoBold" }}>
