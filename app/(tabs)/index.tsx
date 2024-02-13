@@ -16,7 +16,7 @@ import { Link } from "expo-router";
 
 export default function TabOneScreen() {
   const [imageHeights, setImageHeights] = useState<number[]>([]);
-  const [discover, setdiscover] = useState(false);
+  const [discover, setdiscover] = useState(true);
 
   const generateSize = () => {
     const sizes = userProfiles.map(() => {
@@ -26,12 +26,14 @@ export default function TabOneScreen() {
   };
 
   const userProfiles: Array<{
+    id: number;
     name: string;
     activity: string;
     profession: string;
     img: any;
   }> = [
     {
+      id: 1,
       name: "Michael Rodriguez",
       activity:
         "Passionate about fitness and outdoor activities. Let’s stay active together!",
@@ -39,18 +41,21 @@ export default function TabOneScreen() {
       img: require("../../assets/images/smiling-3.jpg"),
     },
     {
+      id: 2,
       name: "Amanda Smith",
       activity: "Adventurous spirit seeking a partner to explore the world.",
       profession: "Doctor",
       img: require("../../assets/images/smiling-2.jpg"),
     },
     {
+      id: 3,
       name: "Jannette Louis",
       activity: "I’ll cook a delicious food for you!",
       profession: "Photographer",
       img: require("../../assets/images/smiling-1.jpg"),
     },
     {
+      id: 4,
       name: "Sophia Turner",
       activity:
         "Art enthusiast and movie lover. Looking for someone to share my passions with.",
@@ -58,6 +63,7 @@ export default function TabOneScreen() {
       img: require("../../assets/images/smiling-4.jpg"),
     },
     {
+      id: 5,
       name: "David Foster",
       activity:
         "Tech geek and aspiring chef. Let me code you a website and cook you a meal!",
@@ -65,6 +71,7 @@ export default function TabOneScreen() {
       img: require("../../assets/images/smiling-1.jpg"),
     },
     {
+      id: 6,
       name: "Michael Rodriguez",
       activity:
         "Passionate about fitness and outdoor activities. Let’s stay active together!",
@@ -244,6 +251,7 @@ export default function TabOneScreen() {
           <>
             {/* Discover Items Section */}
             <Discover userProfiles={userProfiles} />
+            {/* <TestApp userProfiles={userProfiles} /> */}
           </>
         )}
       </View>
