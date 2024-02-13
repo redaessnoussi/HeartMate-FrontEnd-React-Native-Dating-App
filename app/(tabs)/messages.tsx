@@ -180,7 +180,7 @@ const messagesTab = () => {
 
   return (
     <ScrollView
-      style={{ flex: 1, backgroundColor: Colors.white }}
+      style={{ flex: 1, backgroundColor: Colors.white, paddingTop: 32 }}
       contentContainerStyle={{ flexGrow: 1 }}
       keyboardShouldPersistTaps="handled"
     >
