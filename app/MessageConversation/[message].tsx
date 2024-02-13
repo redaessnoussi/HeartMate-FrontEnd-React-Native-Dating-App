@@ -123,6 +123,8 @@ const MessageConversation = () => {
         <View
           style={{
             flexDirection: "row",
+            alignItems: "flex-end",
+            paddingVertical: 24,
           }}
         >
           {/* Use Info with Image */}
@@ -133,7 +135,7 @@ const MessageConversation = () => {
               gap: 16,
             }}
           >
-            <TouchableOpacity onPress={router.back}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
               <Ionicons name="chevron-back" size={32} color={Colors.darkPink} />
             </TouchableOpacity>
             <Image
