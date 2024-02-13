@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import MasonryList from "@react-native-seoul/masonry-list";
 import { Ionicons, Octicons, SimpleLineIcons } from "@expo/vector-icons";
 import Discover from "../modules/Discover/discover";
+import { Link } from "expo-router";
 
 export default function TabOneScreen() {
   const [imageHeights, setImageHeights] = useState<number[]>([]);
@@ -111,9 +112,11 @@ export default function TabOneScreen() {
           >
             {userProfile.activity}
           </Text>
-          <TouchableOpacity>
-            <SimpleLineIcons name="options" size={24} color={Colors.grey} />
-          </TouchableOpacity>
+          <Link href={`/modules/UserDetail/2`} asChild>
+            <TouchableOpacity>
+              <SimpleLineIcons name="options" size={24} color={Colors.grey} />
+            </TouchableOpacity>
+          </Link>
         </View>
       </>
     );
