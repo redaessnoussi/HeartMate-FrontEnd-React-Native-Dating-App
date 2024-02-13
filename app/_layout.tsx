@@ -22,9 +22,9 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [loaded, error] = useFonts({
-    RobotoRegular: require("../assets/fonts/Roboto-Regular.ttf"),
-    RobotoBold: require("../assets/fonts/Roboto-Bold.ttf"),
-    RobotoMedium: require("../assets/fonts/Roboto-Medium.ttf"),
+    PoppinsRegular: require("../assets/fonts/Poppins-Regular.ttf"),
+    PoppinsMedium: require("../assets/fonts/Poppins-Medium.ttf"),
+    PoppinsBold: require("../assets/fonts/Poppins-Bold.ttf"),
   });
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
@@ -46,9 +46,9 @@ export default function RootLayout() {
   const theme = {
     ...DefaultTheme, // You can also use DarkTheme or create your custom theme
     fonts: {
-      regular: { fontFamily: "RobotoRegular" },
-      bold: { fontFamily: "RobotoBold" },
-      semiBold: { fontFamily: "RobotoMedium" },
+      regular: { fontFamily: "PoppinsRegular" },
+      medium: { fontFamily: "PoppinsMedium" },
+      bold: { fontFamily: "PoppinsBold" },
     },
   };
 
