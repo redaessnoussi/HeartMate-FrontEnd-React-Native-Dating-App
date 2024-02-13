@@ -145,7 +145,7 @@ const MessageConversation = () => {
               style={styles.profileImage}
             />
             <View style={{ gap: 4 }}>
-              <Text style={{ fontSize: 18, fontFamily: "RobotoBold" }}>
+              <Text style={{ fontSize: 18, fontFamily: "PoppinsBold" }}>
                 Mike Thompson
               </Text>
               <Text style={{ color: Colors.red }}>Online</Text>
@@ -191,7 +191,7 @@ const MessageConversation = () => {
         <Text
           style={{
             color: Colors.darkGrey,
-            fontFamily: "RobotoBold",
+            fontFamily: "PoppinsBold",
             textAlign: "center",
             marginBottom: 16,
           }}
