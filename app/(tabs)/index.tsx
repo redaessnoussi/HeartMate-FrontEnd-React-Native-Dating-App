@@ -7,20 +7,26 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Colors from "../../constants/Colors";
-import { LinearGradient } from "expo-linear-gradient";
 import { useEffect, useState } from "react";
 import MasonryList from "@react-native-seoul/masonry-list";
-import { Ionicons, Octicons, SimpleLineIcons } from "@expo/vector-icons";
+import { Ionicons, Octicons } from "@expo/vector-icons";
 import Discover from "../modules/Discover/discover";
-import { Link } from "expo-router";
+import userCards from "../../components/Discover/UserCards/userCards";
+import CustomButton from "../../components/CustomButton/CustomButton";
+import PostDiscoverSwitch from "../../components/UserPosts/PostDiscoverSwitch";
 
 export default function TabOneScreen() {
   const [imageHeights, setImageHeights] = useState<number[]>([]);
-  const [discover, setdiscover] = useState(true);
+  const [discover, setdiscover] = useState(false);
+
+  // Callback function to update discover state
+  const handleDiscoverChange = (newValue: boolean) => {
+    setdiscover(newValue);
+  };
 
   const generateSize = () => {
     const sizes = userProfiles.map(() => {
-      return Math.floor(Math.random() * (300 - 200 + 1)) + 150;
+      return Math.floor(Math.random() * (350 - 300)) + 250;
     });
     setImageHeights(sizes);
   };
@@ -80,92 +86,24 @@ export default function TabOneScreen() {
     },
   ];
 
-  const usersCards = (item: any) => {
-    const userProfile = item.item;
-    return (
-      <>
-        <ImageBackground
-          source={userProfile.img}
-          style={[styles.imageBackground, { height: imageHeights[item.i] }]}
-          key={item.i}
-        >
-          <LinearGradient
-            colors={["rgba(0,0,0,0.7)", "transparent"]}
-            locations={[0.07, 0.2]}
-            style={styles.gradient}
-          >
-            <View style={styles.cardContent}>
-              <Text style={styles.title}>{userProfile.name}</Text>
-            </View>
-          </LinearGradient>
-        </ImageBackground>
-        <View
-          style={{
-            paddingVertical: 8,
-            backgroundColor: Colors.white,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 12,
-              color: Colors.darkBlack,
-              fontFamily: "RobotoRegular",
-              width: "80%",
-            }}
-            numberOfLines={2}
-          >
-            {userProfile.activity}
-          </Text>
-          <Link href={`/modules/UserDetail/2`} asChild>
-            <TouchableOpacity>
-              <SimpleLineIcons name="options" size={24} color={Colors.grey} />
-            </TouchableOpacity>
-          </Link>
-        </View>
-      </>
-    );
-  };
-
   useEffect(() => {
     generateSize();
   }, []);
 
   return (
     <ScrollView
-      style={{ flex: 1, backgroundColor: Colors.white }}
-      contentContainerStyle={{ flexGrow: 1 }}
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}
       keyboardShouldPersistTaps="handled"
     >
-      <View
-        style={{
-          flex: 1,
-          paddingHorizontal: 32,
-          paddingVertical: 64,
-          backgroundColor: Colors.white,
-        }}
-      >
+      <View style={styles.mainContainer}>
         {/* Top Header Section */}
-        <View
-          style={{
-            backgroundColor: Colors.white,
-            marginBottom: 16,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          {/* location */}
-          <View style={{ gap: 4 }}>
-            <Text style={{ fontSize: 16, fontFamily: "RobotoMedium" }}>
-              Your Location
-            </Text>
+        <View style={styles.headerContainer}>
+          {/* Location Settings Change */}
+          <View style={styles.locationContainer}>
+            <Text style={styles.locationText}>Your Location</Text>
             <TouchableOpacity>
-              <View
-                style={{ flexDirection: "row", gap: 10, alignItems: "center" }}
-              >
+              <View style={styles.locationWrapper}>
                 <Octicons name="location" size={16} color={Colors.red} />
                 <Text>Surabaya, IDN</Text>
                 <Ionicons
@@ -178,72 +116,42 @@ export default function TabOneScreen() {
           </View>
 
           {/* Notification and Search */}
-          <View style={{ flexDirection: "row", gap: 16 }}>
-            <TouchableOpacity>
-              <Ionicons name="search-outline" size={24} color="black" />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Ionicons name="notifications-outline" size={24} color="black" />
-            </TouchableOpacity>
+          <View style={styles.notificationContainer}>
+            {/* Search for user activity */}
+            <CustomButton
+              btnSize="sm"
+              iconType="Ionicons"
+              iconName="search-outline"
+              iconSize={24}
+              onPress={() => console.log("search")}
+            />
+            {/* Notification Bell */}
+            <CustomButton
+              btnSize="sm"
+              iconType="Ionicons"
+              iconName="notifications-outline"
+              iconSize={24}
+              onPress={() => console.log("show notification")}
+            />
           </View>
         </View>
 
         {/* Switch Section */}
-        <View
-          style={{
-            backgroundColor: Colors.softGrey,
-            flexDirection: "row",
-            justifyContent: "center",
-            gap: 30,
-            paddingVertical: 8,
-            borderRadius: 40,
-            marginBottom: 16,
-          }}
-        >
-          <TouchableOpacity
-            style={{
-              paddingHorizontal: 16,
-              paddingVertical: 8,
-              backgroundColor: Colors.darkPink,
-              justifyContent: "center",
-              flexDirection: "row",
-              borderRadius: 30,
-            }}
-          >
-            <Text style={{ color: Colors.white, fontFamily: "RobotoBold" }}>
-              Post
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              paddingHorizontal: 16,
-              paddingVertical: 8,
-              backgroundColor: Colors.softGrey,
-              justifyContent: "center",
-              flexDirection: "row",
-              borderRadius: 30,
-            }}
-          >
-            <Text style={{ color: Colors.darkBlack, fontFamily: "RobotoBold" }}>
-              Discover
-            </Text>
-          </TouchableOpacity>
-        </View>
+        <PostDiscoverSwitch
+          onDiscoverChange={handleDiscoverChange}
+          discover={discover}
+        />
+
         {!discover ? (
           <>
             {/* Posts Items Section */}
-            <View
-              style={{
-                backgroundColor: Colors.white,
-                flex: 1,
-              }}
-            >
+            <View style={styles.postsContainer}>
               {/* Masonry List for Profile Cards */}
               <MasonryList
-                style={{ gap: 16 }}
+                style={styles.profileCardList}
                 numColumns={2}
                 data={userProfiles}
-                renderItem={(item) => usersCards(item)}
+                renderItem={(item) => userCards(item, imageHeights)}
               />
             </View>
           </>
@@ -251,7 +159,6 @@ export default function TabOneScreen() {
           <>
             {/* Discover Items Section */}
             <Discover userProfiles={userProfiles} />
-            {/* <TestApp userProfiles={userProfiles} /> */}
           </>
         )}
       </View>
@@ -260,26 +167,47 @@ export default function TabOneScreen() {
 }
 
 const styles = StyleSheet.create({
-  imageBackground: {
-    width: "100%",
-    overflow: "hidden",
-    objectFit: "cover",
-    borderRadius: 10,
-  },
-  gradient: {
+  container: {
     flex: 1,
-    padding: 16,
+    backgroundColor: Colors.white,
   },
-  cardContent: {
+  contentContainer: {
+    flexGrow: 1,
+  },
+  mainContainer: {
+    flex: 1,
+    paddingHorizontal: 32,
+    paddingVertical: 64,
+    backgroundColor: Colors.white,
+  },
+  headerContainer: {
+    backgroundColor: Colors.white,
     marginBottom: 16,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
-  title: {
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "#FFF",
+  locationContainer: {
+    gap: 4,
   },
-  description: {
+  locationText: {
     fontSize: 16,
-    color: "#FFF",
+    fontFamily: "PoppinsMedium",
+  },
+  locationWrapper: {
+    flexDirection: "row",
+    gap: 10,
+    alignItems: "center",
+  },
+  notificationContainer: {
+    flexDirection: "row",
+    gap: 16,
+  },
+  postsContainer: {
+    backgroundColor: Colors.white,
+    flex: 1,
+  },
+  profileCardList: {
+    gap: 16,
   },
 });
