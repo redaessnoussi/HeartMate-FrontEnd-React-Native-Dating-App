@@ -46,9 +46,9 @@ export default function RootLayout() {
   const theme = {
     ...DefaultTheme, // You can also use DarkTheme or create your custom theme
     fonts: {
-      regular: { fontFamily: "RobotoRegular", fontWeight: "normal" },
-      bold: { fontFamily: "RobotoBold", fontWeight: "bold" },
-      semiBold: { fontFamily: "RobotoMedium", fontWeight: "500" },
+      regular: { fontFamily: "RobotoRegular" },
+      bold: { fontFamily: "RobotoBold" },
+      semiBold: { fontFamily: "RobotoMedium" },
     },
   };
 
