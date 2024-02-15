@@ -1,26 +1,14 @@
+import React, { useEffect, useState } from "react";
 import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { SplashScreen, Stack } from "expo-router";
-import { useEffect, useState } from "react";
-import { View, useColorScheme } from "react-native";
-import SplashPage from "./modules/SplashPage/SplashPage";
-import LoginPage from "./modules/LoginPage/LoginPage";
-
-export {
-  // Catch any errors thrown by the Layout component.
-  ErrorBoundary,
-} from "expo-router";
+import { SplashScreen, Stack, useRouter } from "expo-router";
 
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
   initialRouteName: "(tabs)",
 };
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
-
 export default function RootLayout() {
-  const [loggedIn, setLoggedIn] = useState(false);
   const [loaded, error] = useFonts({
     PoppinsRegular: require("../assets/fonts/Poppins-Regular.ttf"),
     PoppinsMedium: require("../assets/fonts/Poppins-Medium.ttf"),
@@ -60,11 +48,28 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme();
+  const router = useRouter();
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track user's login status
+  const splashPage = "/modules/SplashPage/SplashPage";
+
+  // Show The Splash Page if the user is not logged in
+  useEffect(() => {
+    if (!isLoggedIn) {
+      router.push(splashPage);
+    } else {
+      router.back();
+    }
+  }, [isLoggedIn]);
 
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-    </Stack>
+    <>
+      {isLoggedIn ? (
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        </Stack>
+      ) : (
+        <Stack />
+      )}
+    </>
   );
 }
