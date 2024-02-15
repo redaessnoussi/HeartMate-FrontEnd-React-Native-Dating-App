@@ -2,7 +2,6 @@ import {
   Animated,
   Image,
   PanResponder,
-  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -10,10 +9,10 @@ import {
 } from "react-native";
 import Colors from "../../../constants/Colors";
 import { Feather } from "@expo/vector-icons";
-import { useRef, useState } from "react";
-import { useRouter } from "expo-router";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useNavigation, useRouter } from "expo-router";
 
-const splashPage = () => {
+const SplashPage = () => {
   const swipeBtn = useRef(new Animated.ValueXY()).current;
   const [viewWidth, setviewWidth] = useState(0);
   const [hasSwiped, setHasSwiped] = useState(false);
@@ -39,7 +38,6 @@ const splashPage = () => {
       const newX = Math.max(0, Math.min(gesture.dx, swipeWidth));
       swipeBtn.setValue({ x: newX, y: 0 });
       if (newX === swipeWidth && !hasSwiped) {
-        nextPage();
         setHasSwiped(true);
       }
     },
@@ -53,20 +51,43 @@ const splashPage = () => {
     },
   });
 
+  const navigation = useNavigation();
+
+  useLayoutEffect(() => {
+    // Customize the top header using Expo Router's header configuration:
+    const headerOptions = {
+      headerShown: false,
+    };
+
+    // Ensure your navigation object is accessible:
+    if (navigation) {
+      navigation.setOptions(headerOptions);
+    }
+  }, []);
+
   const nextPage = () => {
     // Implement your logic when the button is swiped
     console.log("Next Page");
-    router.push("/modules/LoginPage/LoginPage");
+    router.push("/modules/LoginPage/AuthPage");
   };
 
+  useEffect(() => {
+    hasSwiped && nextPage();
+  }, [hasSwiped]);
+
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.subtlePink }}>
+    <View style={{ flex: 1, backgroundColor: Colors.white }}>
       {/* Top Image */}
-      <View style={{ flex: 1 }}>
-        {/* <Image
-          source={require("../../../assets/images/happy-couple-splash-screen.jpg")}
+      <View
+        style={{
+          flex: 1.3,
+          backgroundColor: Colors.subtlePink,
+        }}
+      >
+        <Image
+          source={require("../../../assets/images/splash-screen.jpg")}
           style={{ height: "100%", width: "100%" }}
-        /> */}
+        />
       </View>
 
       {/* Header & Description Section */}
@@ -77,6 +98,7 @@ const splashPage = () => {
           flex: 1,
           justifyContent: "space-between",
           backgroundColor: Colors.white,
+          borderTopRightRadius: 50,
         }}
       >
         {/* Header & Text */}
@@ -156,11 +178,11 @@ const splashPage = () => {
           </TouchableOpacity>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
-export default splashPage;
+export default SplashPage;
 
 const styles = StyleSheet.create({
   txtHeader: {
