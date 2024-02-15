@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import Colors from "../../constants/Colors";
-import CustomButton from "../CustomButton/CustomButton";
+import CustomButton from "../Customs/CustomButton/CustomButton";
 
 interface PostDiscoverSwitchProps {
   onDiscoverChange: (newValue: boolean) => void;
