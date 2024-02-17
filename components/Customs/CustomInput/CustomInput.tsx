@@ -1,4 +1,5 @@
 import {
+  KeyboardTypeOptions,
   StyleSheet,
   Text,
   TextInput,
@@ -12,6 +13,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 interface InputProps {
   isPassword?: boolean;
   inputLabel: string;
+  keyboardType?: KeyboardTypeOptions;
   placeholder: string;
   inputValue: string;
   onChangeText: (text: string) => void;
@@ -20,6 +22,7 @@ interface InputProps {
 const CustomInput = ({
   isPassword,
   inputLabel,
+  keyboardType,
   placeholder,
   inputValue,
   onChangeText,
@@ -65,6 +68,7 @@ const CustomInput = ({
             borderRadius: 8,
           }}
           placeholder={placeholder}
+          keyboardType={keyboardType}
           value={inputValue}
           onChangeText={onChangeText}
           secureTextEntry={isPassword ? !showPassword : false}
@@ -72,6 +76,11 @@ const CustomInput = ({
       )}
     </>
   );
+};
+
+CustomInput.defaultProps = {
+  keyboardType: "default",
+  // other default props...
 };
 
 export default CustomInput;
