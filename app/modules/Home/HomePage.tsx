@@ -13,21 +13,14 @@ import Discover from "../Discover/discover";
 import userCards from "../../../components/Discover/UserCards/userCards";
 import CustomButton from "../../../components/Customs/CustomButton/CustomButton";
 import PostDiscoverSwitch from "../../../components/UserPosts/PostDiscoverSwitch";
+import useRandomSizes from "../../../components/Customs/Hooks/useRandomSizes";
 
 const HomePage = () => {
-  const [imageHeights, setImageHeights] = useState<number[]>([]);
   const [discover, setdiscover] = useState(false);
 
   // Callback function to update discover state
   const handleDiscoverChange = (newValue: boolean) => {
     setdiscover(newValue);
-  };
-
-  const generateSize = () => {
-    const sizes = userProfiles.map(() => {
-      return Math.floor(Math.random() * (350 - 300)) + 250;
-    });
-    setImageHeights(sizes);
   };
 
   const userProfiles: Array<{
@@ -85,8 +78,10 @@ const HomePage = () => {
     },
   ];
 
+  const imageHeights = useRandomSizes(userProfiles);
+
   useEffect(() => {
-    generateSize();
+    imageHeights;
   }, []);
 
   return (
