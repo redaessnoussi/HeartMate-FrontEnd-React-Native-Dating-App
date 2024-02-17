@@ -1,14 +1,7 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import Checkbox from "expo-checkbox";
 import React, { useLayoutEffect, useState } from "react";
 import Colors from "../../../../constants/Colors";
-import { FontAwesome5 } from "@expo/vector-icons";
 import { useNavigation } from "expo-router";
 import CustomInput from "../../../../components/Customs/CustomInput/CustomInput";
 import CustomButton from "../../../../components/Customs/CustomButton/CustomButton";
