@@ -14,7 +14,7 @@ const NameProfession: React.FC<NameProfessionProps> = ({
 }) => {
   return (
     <>
-      <View style={{ gap: 8 }}>
+      <View>
         <Text
           style={{
             color: Colors.white,

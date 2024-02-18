@@ -26,8 +26,8 @@ const ImageCard: React.FC<DiscoverProps> = ({ userProfile }) => {
           style={{ width: "100%", height: "100%" }}
         >
           <LinearGradient
-            colors={["rgba(0,0,0,0.7)", "transparent"]}
-            locations={[0.07, 0.4]}
+            colors={["rgba(0,0,0,0.5)", "transparent"]}
+            locations={[0.07, 0.3]}
             start={{ x: 0.5, y: 1 }} // Bottom
             end={{ x: 0.5, y: 0 }} // Top
             style={styles.gradient}
@@ -54,7 +54,7 @@ const ImageCard: React.FC<DiscoverProps> = ({ userProfile }) => {
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  paddingBottom: 48,
+                  paddingBottom: 32,
                 }}
               >
                 {/* Name & Profession */}

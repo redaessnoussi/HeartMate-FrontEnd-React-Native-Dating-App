@@ -14,6 +14,7 @@ import userCards from "../../../components/Discover/UserCards/userCards";
 import CustomButton from "../../../components/Customs/CustomButton/CustomButton";
 import PostDiscoverSwitch from "../../../components/UserPosts/PostDiscoverSwitch";
 import useRandomSizes from "../../../components/Customs/Hooks/useRandomSizes";
+import TestSwipe from "../Discover/testSwipe";
 
 const HomePage = () => {
   const [discover, setdiscover] = useState(false);
@@ -54,7 +55,7 @@ const HomePage = () => {
     },
     {
       id: 4,
-      name: "Sophia Turner",
+      name: "Anna Turner",
       activity:
         "Art enthusiast and movie lover. Looking for someone to share my passions with.",
       profession: "Teacher",
@@ -62,7 +63,7 @@ const HomePage = () => {
     },
     {
       id: 5,
-      name: "David Foster",
+      name: "Alex Foster",
       activity:
         "Tech geek and aspiring chef. Let me code you a website and cook you a meal!",
       profession: "Nurse",
@@ -70,7 +71,7 @@ const HomePage = () => {
     },
     {
       id: 6,
-      name: "Michael Rodriguez",
+      name: "Johny Rodriguez",
       activity:
         "Passionate about fitness and outdoor activities. Let’s stay active together!",
       profession: "Lawyer",
@@ -153,6 +154,7 @@ const HomePage = () => {
           <>
             {/* Discover Items Section */}
             <Discover userProfiles={userProfiles} />
+            {/* <TestSwipe userProfiles={userProfiles} /> */}
           </>
         )}
       </View>

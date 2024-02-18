@@ -17,40 +17,49 @@ const LikeDislike = () => {
     >
       {/* Doesn't Like */}
       <TouchableOpacity
-        style={{
-          width: 56,
-          height: 56,
-          borderRadius: 28,
-          backgroundColor: Colors.white,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        style={[
+          styles.btnShadow,
+          {
+            width: 56,
+            height: 56,
+            borderRadius: 28,
+            backgroundColor: Colors.white,
+            justifyContent: "center",
+            alignItems: "center",
+          },
+        ]}
       >
         <AntDesign name="close" size={24} color={Colors.red} />
       </TouchableOpacity>
       {/* Favorite */}
       <TouchableOpacity
-        style={{
-          width: 72,
-          height: 72,
-          borderRadius: 36,
-          backgroundColor: Colors.pink,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        style={[
+          styles.btnShadow,
+          {
+            width: 72,
+            height: 72,
+            borderRadius: 36,
+            backgroundColor: Colors.pink,
+            justifyContent: "center",
+            alignItems: "center",
+          },
+        ]}
       >
         <AntDesign name="star" size={24} color={Colors.white} />
       </TouchableOpacity>
       {/* Like */}
       <TouchableOpacity
-        style={{
-          width: 56,
-          height: 56,
-          borderRadius: 28,
-          backgroundColor: Colors.white,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        style={[
+          styles.btnShadow,
+          {
+            width: 56,
+            height: 56,
+            borderRadius: 28,
+            backgroundColor: Colors.white,
+            justifyContent: "center",
+            alignItems: "center",
+          },
+        ]}
       >
         <AntDesign name="heart" size={24} color={Colors.red} />
       </TouchableOpacity>
@@ -60,4 +69,16 @@ const LikeDislike = () => {
 
 export default LikeDislike;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  btnShadow: {
+    shadowColor: "#313131",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+  },
+});

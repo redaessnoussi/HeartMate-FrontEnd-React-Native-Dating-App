@@ -4,7 +4,7 @@ import Colors from "../../../constants/Colors";
 import ImageCard from "../../../components/Discover/ImageCard/ImageCard";
 import { useAnimatedStyle } from "react-native-reanimated";
 
-interface DiscoverProps {
+interface TestSwipeProps {
   userProfiles: Array<{
     id: number;
     name: string;
@@ -16,7 +16,7 @@ interface DiscoverProps {
 
 const SWIPE_THRESHOLD = 120;
 
-const Discover: React.FC<DiscoverProps> = ({ userProfiles }) => {
+const TestSwipe: React.FC<TestSwipeProps> = ({ userProfiles }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const cardPosition = new Animated.ValueXY();
 
@@ -77,6 +77,7 @@ const Discover: React.FC<DiscoverProps> = ({ userProfiles }) => {
               ]}
               {...panResponder.panHandlers}
             >
+              <Text>{item.id}</Text>
               <ImageCard userProfile={[item]} />
             </Animated.View>
           );
@@ -89,8 +90,8 @@ const Discover: React.FC<DiscoverProps> = ({ userProfiles }) => {
                 {
                   zIndex: -index,
                   transform: [
-                    { translateY: -45 * (currentIndex - index) }, // Adjust position based on index
-                    { scale: 0.95 + (currentIndex - index) * 0.1 },
+                    { translateY: -50 * (currentIndex - index) }, // Adjust position based on index
+                    { scale: 1 + (currentIndex - index) * 0.1 },
                   ], // Adjust scale based on index
                 },
               ]}
@@ -103,7 +104,7 @@ const Discover: React.FC<DiscoverProps> = ({ userProfiles }) => {
   );
 };
 
-export default Discover;
+export default TestSwipe;
 
 const styles = StyleSheet.create({
   container: {
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   card: {
-    height: "95%",
+    height: "100%",
     width: "100%",
     position: "absolute",
     backgroundColor: Colors.subtlePink,
@@ -123,14 +124,5 @@ const styles = StyleSheet.create({
     paddingTop: 16,
     paddingBottom: 82,
     borderRadius: 8,
-    shadowColor: "#313131",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
-    elevation: 5,
   },
 });
