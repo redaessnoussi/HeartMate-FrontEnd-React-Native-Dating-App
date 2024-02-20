@@ -17,7 +17,7 @@ git clone https://github.com/redaessnoussi/HeartMate-FrontEnd-React-Native-Datin
 
 2. Install the dependencies:
 
-npx install
+npm install
 
 3. Start the app:
 
