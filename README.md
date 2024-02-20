@@ -29,6 +29,7 @@ Heartmate uses the following dependencies:
 
 - Expo
 - React Native
+- TypeScript
 - Jest for testing
 
 And many more. Check the `package.json` file for more details.
