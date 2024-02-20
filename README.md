@@ -1,10 +1,4 @@
-# HeartMate FrontEnd React Native Dating App
-
-- npm run android
-- npm run ios # you need to use macOS to build the iOS project - use the Expo app if you need to do iOS development without a Mac
-- npm run web
-
-# Heartmate - React Native Dating App
+# Heartmate - React Native Dating App (Frontend)
 
 Heartmate is a dating app built with React Native and Expo. It features a user-friendly interface with swipe left and right cards, a chat system, and a masonry grid for user profiles.
 
