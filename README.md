@@ -4,15 +4,8 @@ Heartmate is an innovative dating application developed using React Native and E
 
 # App Preview
 
-![1](https://github.com/redaessnoussi/HeartMate-FrontEnd-React-Native-Dating-App/assets/71893153/b2ec6042-53bd-467c-8ecd-bf7c471f37f6)
-![2](https://github.com/redaessnoussi/HeartMate-FrontEnd-React-Native-Dating-App/assets/71893153/e124a4c7-b83f-4893-954c-1965c5f81afd)
-![3](https://github.com/redaessnoussi/HeartMate-FrontEnd-React-Native-Dating-App/assets/71893153/55bcf9f7-4ffa-4ff4-882d-818e2aa01d36)
-![Uploading 4.png…]()
-![5](https://github.com/redaessnoussi/HeartMate-FrontEnd-React-Native-Dating-App/assets/71893153/db704625-b76a-427d-bd73-5f446e7bf806)
-![6](https://github.com/redaessnoussi/HeartMate-FrontEnd-React-Native-Dating-App/assets/71893153/419d59cd-0d4d-45ea-b96c-0e2dfd3ce545)
-![7](https://github.com/redaessnoussi/HeartMate-FrontEnd-React-Native-Dating-App/assets/71893153/5b5c4c4c-7312-4e70-aa8a-496c79afe4e9)
-![8](https://github.com/redaessnoussi/HeartMate-FrontEnd-React-Native-Dating-App/assets/71893153/ed883f8b-8c9c-4e81-b245-53ace1e7e565)
 
+[heartmate app_compressed.webm](https://github.com/redaessnoussi/HeartMate-FrontEnd-React-Native-Dating-App/assets/71893153/0b95bdcd-1aff-492f-ba40-fab42a33e5e4)
 
 
 ## Features
