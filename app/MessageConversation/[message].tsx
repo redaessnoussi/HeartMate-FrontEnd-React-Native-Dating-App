@@ -111,74 +111,53 @@ const MessageConversation = () => {
     },
   ];
 
-  useLayoutEffect(() => {
-    // Customize the top header using Expo Router's header configuration:
-    const headerOptions = {
-      headerStyle: {
-        backgroundColor: Colors.subtlePink, // Set background color to red
-      },
-      headerTitleAlign: "center",
-      headerTitle: () => (
-        // Function for customizable header title
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "flex-end",
-            paddingVertical: 24,
-          }}
-        >
-          {/* Use Info with Image */}
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              gap: 16,
-            }}
-          >
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Ionicons name="chevron-back" size={32} color={Colors.darkPink} />
-            </TouchableOpacity>
-            <Image
-              source={{
-                uri: "https://s3.envato.com/files/281015164/645Z3864%20copy.jpg",
-              }}
-              style={styles.profileImage}
-            />
-            <View style={{ gap: 4 }}>
-              <Text style={{ fontSize: 18, fontFamily: "PoppinsBold" }}>
-                Mike Thompson
-              </Text>
-              <Text style={{ color: Colors.red }}>Online</Text>
-            </View>
-            {/* Calls Buttons */}
-            <View
-              style={{ flexDirection: "row", alignItems: "center", gap: 24 }}
-            >
-              <TouchableOpacity>
-                <FontAwesome5 name="video" size={24} color={Colors.darkPink} />
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <FontAwesome5
-                  name="phone-alt"
-                  size={24}
-                  color={Colors.darkPink}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
+  const HeaderTop = () => (
+    <View
+      style={{
+        paddingTop: 64,
+        paddingBottom: 32,
+        paddingHorizontal: 32,
+        backgroundColor: Colors.subtlePink,
+      }}
+    >
+      {/* Use Info with Image */}
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+          gap: 16,
+        }}
+      >
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Ionicons name="chevron-back" size={32} color={Colors.darkPink} />
+        </TouchableOpacity>
+        <Image
+          source={require("../../assets/images/man-face-1.jpg")}
+          style={styles.profileImage}
+        />
+        <View>
+          <Text style={{ fontSize: 18, fontFamily: "PoppinsBold" }}>
+            John Doe
+          </Text>
+          <Text style={{ color: Colors.red }}>Online</Text>
         </View>
-      ),
-      headerBackVisible: false,
-    };
-
-    // Ensure your navigation object is accessible:
-    if (navigation) {
-      navigation.setOptions(headerOptions);
-    }
-  }, []);
+        {/* Calls Buttons */}
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 24 }}>
+          <TouchableOpacity>
+            <FontAwesome5 name="video" size={24} color={Colors.darkPink} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <FontAwesome5 name="phone-alt" size={24} color={Colors.darkPink} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  );
 
   return (
     <>
+      <HeaderTop />
       <ScrollView
         showsVerticalScrollIndicator
         style={{

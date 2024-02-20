@@ -2,16 +2,23 @@ import { StyleSheet, Text, View } from "react-native";
 import Checkbox from "expo-checkbox";
 import React, { useLayoutEffect, useState } from "react";
 import Colors from "../../../../constants/Colors";
-import { useNavigation } from "expo-router";
+import { useNavigation, useRouter } from "expo-router";
 import CustomInput from "../../../../components/Customs/CustomInput/CustomInput";
 import CustomButton from "../../../../components/Customs/CustomButton/CustomButton";
 
 const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test@test.com");
+  const [password, setPassword] = useState("testtest");
   const [isChecked, setChecked] = useState(false);
-
   const navigation = useNavigation();
+  const router = useRouter();
+
+  const homePage = "/(tabs)";
+
+  const goHomePage = () => {
+    console.log("Go to Home Page");
+    router.push(homePage);
+  };
 
   useLayoutEffect(() => {
     // Customize the top header using Expo Router's header configuration:
@@ -60,7 +67,7 @@ const LoginForm = () => {
         text="Sign In"
         btnColor="primary"
         btnSize="lg"
-        onPress={() => console.log("Sign In")}
+        onPress={() => goHomePage()}
       />
     </View>
   );

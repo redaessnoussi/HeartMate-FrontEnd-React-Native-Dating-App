@@ -19,6 +19,7 @@ import {
   Octicons,
 } from "@expo/vector-icons";
 import MatchPercent from "../../../components/Discover/MatchPercent/MatchPercent";
+import LikeDislike from "../../../components/Discover/LikeDislike/LikeDislike";
 
 const UserDetail = () => {
   const navigation = useNavigation();
@@ -36,10 +37,10 @@ const UserDetail = () => {
   }, []);
 
   const data = [
-    { img: "../../../assets/images/smiling-2.jpg" },
-    { img: "../../../assets/images/smiling-2.jpg" },
-    { img: "../../../assets/images/smiling-2.jpg" },
-    { img: "../../../assets/images/smiling-2.jpg" },
+    { img: require("../../../assets/images/man-face-1.jpg") },
+    { img: require("../../../assets/images/man-face-2.jpg") },
+    { img: require("../../../assets/images/man-face-3.jpg") },
+    { img: require("../../../assets/images/man-face-4.jpg") },
   ];
 
   return (
@@ -244,7 +245,7 @@ const UserDetail = () => {
                 }}
               >
                 <Image
-                  source={require("../../../assets/images/smiling-2.jpg")}
+                  source={item.img}
                   style={{ width: "100%", height: "100%" }}
                   resizeMode="cover"
                 />

@@ -8,7 +8,7 @@ import CustomButton from "../../../components/Customs/CustomButton/CustomButton"
 import SocialMediaLogin from "./SocialMediaLogin/SocialMediaLogin";
 
 const AuthPage = () => {
-  const [showLoginForm, setShowLoginForm] = useState(false);
+  const [showLoginForm, setShowLoginForm] = useState(true);
 
   const handleFormChange = (newValue: boolean) => {
     setShowLoginForm(newValue);
