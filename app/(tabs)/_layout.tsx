@@ -1,10 +1,8 @@
 import { Tabs } from "expo-router";
-import { Animated, Button, Text, TouchableOpacity, View } from "react-native";
-import SplashPage from "../modules/SplashPage/SplashPage";
+import { Animated, Text, TouchableOpacity } from "react-native";
+// import SplashPage from "../modules/SplashPage/SplashPage";
 import {
-  AntDesign,
   FontAwesome5,
-  Foundation,
   MaterialCommunityIcons,
   Octicons,
 } from "@expo/vector-icons";
@@ -33,7 +31,7 @@ const MenuItems: MenuItem[] = [
     route: "matches",
     label: "Match",
     icon: (size, color) => (
-      <AntDesign name="hearto" size={size} color={color} />
+      <FontAwesome5 name="heart" size={size} color={color} />
     ),
   },
   {
@@ -102,10 +100,12 @@ export default function TabLayout() {
             }}
           >
             {item.icon(24, Colors.white)}
-            <Text style={{ color: Colors.white }}>{item.label}</Text>
+            <Text style={{ color: Colors.white, fontWeight: "900" }}>
+              {item.label}
+            </Text>
           </Animated.View>
         ) : (
-          <>{item.icon(24, Colors.grey)}</>
+          <>{item.icon(28, Colors.grey)}</>
         )}
       </TouchableOpacity>
     );
