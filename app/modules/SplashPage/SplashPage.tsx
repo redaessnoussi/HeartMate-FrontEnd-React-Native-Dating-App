@@ -162,7 +162,7 @@ const SplashPage = () => {
               style={{
                 color: Colors.white,
                 fontSize: 20,
-                fontFamily: "PoppinsBold",
+                fontWeight: "900",
               }}
             >
               Get Started
@@ -188,12 +188,12 @@ const styles = StyleSheet.create({
   txtHeader: {
     fontSize: 36,
     lineHeight: 46,
-    fontFamily: "PoppinsBold",
+    fontWeight: "900",
     color: Colors.darkBlack,
   },
   userStates: {
     fontSize: 18,
-    fontFamily: "PoppinsBold",
+    fontWeight: "900",
     color: Colors.darkBlack,
     lineHeight: 20,
   },

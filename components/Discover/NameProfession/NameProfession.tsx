@@ -19,7 +19,7 @@ const NameProfession: React.FC<NameProfessionProps> = ({
           style={{
             color: Colors.white,
             fontSize: 20,
-            fontFamily: "PoppinsBold",
+            fontWeight: "900",
           }}
         >
           {name}, 25

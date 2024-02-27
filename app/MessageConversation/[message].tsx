@@ -137,9 +137,7 @@ const MessageConversation = () => {
           style={styles.profileImage}
         />
         <View>
-          <Text style={{ fontSize: 18, fontFamily: "PoppinsBold" }}>
-            John Doe
-          </Text>
+          <Text style={{ fontSize: 18, fontWeight: "900" }}>John Doe</Text>
           <Text style={{ color: Colors.red }}>Online</Text>
         </View>
         {/* Calls Buttons */}
@@ -170,7 +168,7 @@ const MessageConversation = () => {
         <Text
           style={{
             color: Colors.darkGrey,
-            fontFamily: "PoppinsBold",
+            fontWeight: "900",
             textAlign: "center",
             marginBottom: 16,
           }}

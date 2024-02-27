@@ -20,7 +20,7 @@ const LogoHeadline = () => {
         <Text
           style={{
             color: Colors.darkPink,
-            fontFamily: "PoppinsBold",
+            fontWeight: "900",
             fontSize: 24,
           }}
         >
@@ -29,7 +29,7 @@ const LogoHeadline = () => {
         <Text
           style={{
             color: Colors.pink,
-            fontFamily: "PoppinsBold",
+            fontWeight: "900",
             fontSize: 24,
           }}
         >

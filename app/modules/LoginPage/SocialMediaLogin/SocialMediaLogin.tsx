@@ -30,18 +30,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 20,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-    elevation: 3,
+    // shadowColor: "#000",
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 1,
+    // },
+    // shadowOpacity: 0.22,
+    // shadowRadius: 2.22,
+    // elevation: 3,
   },
   loginButtonText: {
     color: Colors.white,
-    fontFamily: "PoppinsBold",
+    fontWeight: "900",
   },
   registerButton: {
     backgroundColor: Colors.white,
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   registerButtonText: {
-    fontFamily: "PoppinsBold",
+    fontWeight: "900",
   },
   horizontalBar: {
     borderBottomWidth: 2,
@@ -107,18 +107,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flexDirection: "row",
     borderRadius: 30,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-    elevation: 3,
+    // shadowColor: "#000",
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 1,
+    // },
+    // shadowOpacity: 0.22,
+    // shadowRadius: 2.22,
+    // elevation: 3,
   },
   signInButtonText: {
     color: Colors.white,
-    fontFamily: "PoppinsBold",
+    fontWeight: "900",
   },
   socialLoginContainer: {
     gap: 10,
@@ -141,17 +141,17 @@ const styles = StyleSheet.create({
     gap: 16,
     paddingHorizontal: 24,
     paddingVertical: 16,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.41,
-    elevation: 2,
+    // shadowColor: "#000",
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 1,
+    // },
+    // shadowOpacity: 0.2,
+    // shadowRadius: 1.41,
+    // elevation: 2,
   },
   socialButtonText: {
     color: Colors.darkPink,
-    fontFamily: "PoppinsBold",
+    fontWeight: "900",
   },
 });

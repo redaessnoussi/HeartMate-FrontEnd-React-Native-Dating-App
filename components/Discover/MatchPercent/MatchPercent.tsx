@@ -19,9 +19,7 @@ const MatchPercent = () => {
       }}
     >
       {(fill) => (
-        <Text style={{ color: Colors.white, fontFamily: "PoppinsBold" }}>
-          {fill}%
-        </Text>
+        <Text style={{ color: Colors.white, fontWeight: "900" }}>{fill}%</Text>
       )}
     </AnimatedCircularProgress>
   );

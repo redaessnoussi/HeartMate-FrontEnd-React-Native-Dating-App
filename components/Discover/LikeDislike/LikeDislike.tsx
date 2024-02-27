@@ -71,14 +71,13 @@ export default LikeDislike;
 
 const styles = StyleSheet.create({
   btnShadow: {
-    shadowColor: "#313131",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
-    elevation: 5,
+    // shadowColor: "#313131",
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 2,
+    // },
+    // shadowOpacity: 0.25,
+    // shadowRadius: 3.84,
+    // elevation: 5,
   },
 });

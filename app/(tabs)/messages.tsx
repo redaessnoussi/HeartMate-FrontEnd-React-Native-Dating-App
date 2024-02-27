@@ -1,6 +1,6 @@
 import {
   Image,
-  ImageBackground,
+  // ImageBackground,
   ScrollView,
   StyleSheet,
   Text,
@@ -206,9 +206,7 @@ const messagesTab = () => {
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <AntDesign name="left" size={24} color={Colors.darkPink} />
           </TouchableOpacity>
-          <Text style={{ fontSize: 20, fontFamily: "PoppinsBold" }}>
-            Message
-          </Text>
+          <Text style={{ fontSize: 20, fontWeight: "900" }}>Message</Text>
           <TouchableOpacity>
             <SimpleLineIcons
               name="options-vertical"
@@ -260,7 +258,7 @@ const messagesTab = () => {
           <Text
             style={{
               fontSize: 16,
-              fontFamily: "PoppinsBold",
+              fontWeight: "900",
               marginBottom: 16,
             }}
           >
@@ -299,7 +297,7 @@ const messagesTab = () => {
                         <Text
                           style={{
                             color: Colors.white,
-                            fontFamily: "PoppinsBold",
+                            fontWeight: "900",
                             fontSize: 18,
                           }}
                         >
@@ -364,8 +362,8 @@ const messagesTab = () => {
             <Text
               style={{
                 fontSize: 18,
-                fontFamily: "PoppinsBold",
                 color: Colors.white,
+                fontWeight: "900",
               }}
             >
               Chat
@@ -385,7 +383,7 @@ const messagesTab = () => {
               <Text
                 style={{
                   fontSize: 14,
-                  fontFamily: "PoppinsBold",
+                  fontWeight: "900",
                   color: Colors.darkPink,
                 }}
               >
@@ -408,7 +406,7 @@ const messagesTab = () => {
             <Text
               style={{
                 fontSize: 18,
-                fontFamily: "PoppinsBold",
+                fontWeight: "900",
                 color: Colors.white,
               }}
             >
@@ -429,7 +427,7 @@ const messagesTab = () => {
               <Text
                 style={{
                   fontSize: 14,
-                  fontFamily: "PoppinsBold",
+                  fontWeight: "900",
                   color: Colors.darkPink,
                 }}
               >
