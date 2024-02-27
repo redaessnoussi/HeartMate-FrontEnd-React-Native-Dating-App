@@ -5,6 +5,7 @@ import {
   Text,
   StyleSheet,
   ViewStyle,
+  TextStyle,
 } from "react-native";
 import * as IconTypes from "@expo/vector-icons"; // Assuming you have different icon libraries
 import Colors from "../../../constants/Colors";
@@ -43,6 +44,10 @@ const btnSecondary: ViewStyle = {
   backgroundColor: Colors.white,
 };
 
+const btnTransparent: ViewStyle = {
+  backgroundColor: "transparent",
+};
+
 const txtPrimary = {
   color: Colors.white,
 };
@@ -55,17 +60,17 @@ const txtInactive = {
   color: Colors.darkBlack,
 };
 
-const txtMedium = {
-  fontFamily: "PoppinsMedium",
+const txtMedium: TextStyle = {
+  fontWeight: "500",
 };
 
-const txtBold = {
-  fontFamily: "PoppinsBold",
+const txtBold: TextStyle = {
+  fontWeight: "900",
 };
 
 interface ButtonProps {
-  btnSize?: "sm" | "md" | "lg";
-  btnColor?: "primary" | "secondary" | "inactive";
+  btnSize?: "sm" | "md" | "lg" | undefined;
+  btnColor?: "primary" | "secondary" | "inactive" | "transparent";
   iconName?: string; // Name of the icon (optional)
   iconType?: keyof typeof IconTypes; // Type of icon library
   iconSize?: number; // Size of the icon in pixels (optional)
@@ -93,30 +98,83 @@ const CustomButton = ({
   // Get the appropriate icon component based on iconType
   const IconComponent = iconType ? IconTypes[iconType] : null;
 
+  const getButtonStyle = (btnColor: string, btnSize: string) => {
+    let colorStyle, sizeStyle;
+
+    switch (btnColor) {
+      case "primary":
+        colorStyle = btnPrimary;
+        break;
+      case "secondary":
+        colorStyle = btnSecondary;
+        break;
+      case "inactive":
+        colorStyle = btnInactive;
+        break;
+      case "transparent":
+        colorStyle = btnTransparent;
+        break;
+      default:
+        colorStyle = btnSecondary;
+    }
+    switch (btnSize) {
+      case "sm":
+        sizeStyle = btnSmall;
+        break;
+      case "md":
+        sizeStyle = btnMedium;
+        break;
+      case "lg":
+        sizeStyle = btnLarge;
+        break;
+      default:
+        sizeStyle = btnMedium;
+    }
+
+    return [containerStyle, sizeStyle, colorStyle];
+  };
+
+  const getTextStyle = (btnColor: string, fontWeight: string) => {
+    let colorStyle, weightStyle;
+
+    switch (btnColor) {
+      case "primary":
+        colorStyle = txtPrimary;
+        break;
+      case "secondary":
+        colorStyle = txtSecondary;
+        break;
+      case "inactive":
+        colorStyle = txtInactive;
+        break;
+      default:
+        colorStyle = txtSecondary;
+    }
+
+    switch (fontWeight) {
+      case "medium":
+        weightStyle = txtMedium;
+        break;
+      case "bold":
+        weightStyle = txtBold;
+        break;
+      default:
+        weightStyle = txtMedium;
+    }
+
+    return [textStyle, colorStyle, weightStyle];
+  };
+
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[
-        containerStyle,
-        btnSize === "sm" ? btnSmall : [btnSize === "md" ? btnMedium : btnLarge],
-        btnColor !== "inactive"
-          ? [btnColor === "primary" ? btnPrimary : btnSecondary]
-          : btnInactive,
-      ]}
+      style={getButtonStyle(btnColor || "", btnSize || "")}
     >
       {iconName && (
         <IconComponent name={iconName} size={iconSize} color={iconColor} />
       )}
       {text && (
-        <Text
-          style={[
-            textStyle,
-            btnColor !== "inactive"
-              ? [btnColor === "primary" ? txtPrimary : txtSecondary]
-              : txtInactive,
-            fontWeight === "medium" ? txtMedium : txtBold,
-          ]}
-        >
+        <Text style={getTextStyle(btnColor || "", fontWeight || "")}>
           {text}
         </Text>
       )}
