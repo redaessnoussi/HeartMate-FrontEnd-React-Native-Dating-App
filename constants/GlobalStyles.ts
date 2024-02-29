@@ -15,70 +15,70 @@ const Heading1 = createStylesheet({
 });
 
 const Heading2 = createStylesheet({
+  fontFamily: fontBold,
   fontSize: 24,
-  fontWeight: fontBold,
 });
 
 const Heading3 = createStylesheet({
+  fontFamily: fontBold,
   fontSize: 20,
-  fontWeight: fontBold,
 });
 
 const Heading4 = createStylesheet({
+  fontFamily: fontBold,
   fontSize: 18,
-  fontWeight: fontBold,
 });
 
 const Heading5 = createStylesheet({
+  fontFamily: fontBold,
   fontSize: 16,
-  fontWeight: fontBold,
 });
 
 const Heading6 = createStylesheet({
+  fontFamily: fontBold,
   fontSize: 14,
-  fontWeight: fontBold,
 });
 
 const Heading7 = createStylesheet({
+  fontFamily: fontBold,
   fontSize: 12,
-  fontWeight: fontBold,
 });
 
 // Sub-heading
 const Subhead1 = createStylesheet({
+  fontFamily: fontMedium,
   fontSize: 16,
-  fontWeight: fontMedium,
 });
 
 const Subhead2 = createStylesheet({
+  fontFamily: fontMedium,
   fontSize: 14,
-  fontWeight: fontMedium,
 });
 
 const Subhead3 = createStylesheet({
+  fontFamily: fontMedium,
   fontSize: 12,
-  fontWeight: fontMedium,
 });
 
 // Paragraph
 const Paragraph1 = createStylesheet({
+  fontFamily: fontMedium,
   fontSize: 16,
-  fontWeight: fontMedium,
 });
 
 const Paragraph2 = createStylesheet({
+  fontFamily: fontMedium,
   fontSize: 14,
-  fontWeight: fontMedium,
 });
 
 const Paragraph3 = createStylesheet({
+  fontFamily: fontMedium,
   fontSize: 12,
-  fontWeight: fontMedium,
 });
 
 const Paragraph4 = createStylesheet({
+  fontFamily: fontRegular,
   fontSize: 10,
-  fontWeight: fontRegular,
 });
 
 // Export the stylesheets

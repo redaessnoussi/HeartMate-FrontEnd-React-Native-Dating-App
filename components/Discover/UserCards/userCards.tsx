@@ -43,7 +43,6 @@ const userCards = (item: any, imageHeights: any) => {
           style={{
             fontSize: 12,
             color: Colors.darkBlack,
-            fontFamily: "PoppinsRegular",
             width: "80%",
           }}
           numberOfLines={2}

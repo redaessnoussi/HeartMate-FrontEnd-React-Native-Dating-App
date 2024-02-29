@@ -35,7 +35,7 @@ const CustomInput = ({
 
   return (
     <>
-      <Text style={{ color: Colors.darkBlack, fontFamily: "PoppinsMedium" }}>
+      <Text style={{ color: Colors.darkBlack, fontWeight: "500" }}>
         {inputLabel}
       </Text>
       {isPassword ? (
