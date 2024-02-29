@@ -1,11 +1,12 @@
 import { View, ScrollView, StyleSheet } from "react-native";
 import React, { useState } from "react";
-import LoginForm from "./LoginForm/LoginForm";
-import RegisterForm from "./RegisterForm/RegisterForm";
+import LoginForm from "../../../components/AuthPage/LoginForm/LoginForm";
+import RegisterForm from "../../../components/AuthPage/RegisterForm/RegisterForm";
 import Colors from "../../../constants/Colors";
-import LogoHeadline from "./LogoHeadline/LogoHeadline";
+import LogoHeadline from "../../../components/AuthPage/LogoHeadline/LogoHeadline";
 import CustomButton from "../../../components/Customs/CustomButton/CustomButton";
-import SocialMediaLogin from "./SocialMediaLogin/SocialMediaLogin";
+import SocialMediaLogin from "../../../components/AuthPage/SocialMediaLogin/SocialMediaLogin";
+import { useAuth } from "../../../context/auth";
 
 const AuthPage = () => {
   const [showLoginForm, setShowLoginForm] = useState(true);
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
   },
   inputLabel: {
     color: Colors.darkBlack,
-    fontFamily: "PoppinsMedium",
+    fontWeight: "500",
   },
   input: {
     backgroundColor: Colors.softGrey,
@@ -150,7 +151,6 @@ const styles = StyleSheet.create({
   },
   forgetPasswordText: {
     color: Colors.red,
-    fontFamily: "PoppinsRegular",
     fontSize: 12,
   },
   signInButton: {
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   },
   socialLoginText: {
     color: Colors.darkBlack,
-    fontFamily: "PoppinsMedium",
+    fontWeight: "500",
     textAlign: "center",
     marginTop: 20,
   },

@@ -5,16 +5,15 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import Colors from "../../../constants/Colors";
+import Colors from "../../constants/Colors";
 import { useEffect, useState } from "react";
 import MasonryList from "@react-native-seoul/masonry-list";
 import { Ionicons, Octicons } from "@expo/vector-icons";
 import Discover from "../Discover/discover";
-import userCards from "../../../components/Discover/UserCards/userCards";
-import CustomButton from "../../../components/Customs/CustomButton/CustomButton";
-import PostDiscoverSwitch from "../../../components/UserPosts/PostDiscoverSwitch";
-import useRandomSizes from "../../../components/Customs/Hooks/useRandomSizes";
-import TestSwipe from "../Discover/testSwipe";
+import userCards from "../../components/Discover/UserCards/userCards";
+import CustomButton from "../../components/Customs/CustomButton/CustomButton";
+import PostDiscoverSwitch from "../../components/UserPosts/PostDiscoverSwitch";
+import useRandomSizes from "../../components/Customs/Hooks/useRandomSizes";
 
 const HomePage = () => {
   const [discover, setdiscover] = useState(false);
@@ -37,21 +36,21 @@ const HomePage = () => {
       activity:
         "Passionate about fitness and outdoor activities. Let’s stay active together!",
       profession: "Lawyer",
-      img: require("../../../assets/images/smiling-3.jpg"),
+      img: require("../../assets/images/smiling-3.jpg"),
     },
     {
       id: 2,
       name: "Amanda Smith",
       activity: "Adventurous spirit seeking a partner to explore the world.",
       profession: "Doctor",
-      img: require("../../../assets/images/smiling-2.jpg"),
+      img: require("../../assets/images/smiling-2.jpg"),
     },
     {
       id: 3,
       name: "Jannette Louis",
       activity: "I’ll cook a delicious food for you!",
       profession: "Photographer",
-      img: require("../../../assets/images/smiling-1.jpg"),
+      img: require("../../assets/images/smiling-1.jpg"),
     },
     {
       id: 4,
@@ -59,7 +58,7 @@ const HomePage = () => {
       activity:
         "Art enthusiast and movie lover. Looking for someone to share my passions with.",
       profession: "Teacher",
-      img: require("../../../assets/images/smiling-4.jpg"),
+      img: require("../../assets/images/smiling-4.jpg"),
     },
     {
       id: 5,
@@ -67,7 +66,7 @@ const HomePage = () => {
       activity:
         "Tech geek and aspiring chef. Let me code you a website and cook you a meal!",
       profession: "Nurse",
-      img: require("../../../assets/images/smiling-1.jpg"),
+      img: require("../../assets/images/smiling-1.jpg"),
     },
     {
       id: 6,
@@ -75,7 +74,7 @@ const HomePage = () => {
       activity:
         "Passionate about fitness and outdoor activities. Let’s stay active together!",
       profession: "Lawyer",
-      img: require("../../../assets/images/smiling-3.jpg"),
+      img: require("../../assets/images/smiling-3.jpg"),
     },
   ];
 
@@ -190,7 +189,7 @@ const styles = StyleSheet.create({
   },
   locationText: {
     fontSize: 16,
-    fontFamily: "PoppinsMedium",
+    fontWeight: "500",
   },
   locationWrapper: {
     flexDirection: "row",

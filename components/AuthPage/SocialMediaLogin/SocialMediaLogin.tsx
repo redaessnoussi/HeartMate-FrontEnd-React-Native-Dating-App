@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import Colors from "../../../../constants/Colors";
+import Colors from "../../../constants/Colors";
 import { FontAwesome5, FontAwesome } from "@expo/vector-icons";
 
 const SocialMediaLogin = () => {
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   inputLabel: {
     color: Colors.darkBlack,
-    fontFamily: "PoppinsMedium",
+    fontWeight: "500",
   },
   input: {
     backgroundColor: Colors.softGrey,
@@ -97,7 +97,6 @@ const styles = StyleSheet.create({
   },
   forgetPasswordText: {
     color: Colors.red,
-    fontFamily: "PoppinsRegular",
     fontSize: 12,
   },
   signInButton: {
@@ -125,7 +124,7 @@ const styles = StyleSheet.create({
   },
   socialLoginText: {
     color: Colors.darkBlack,
-    fontFamily: "PoppinsMedium",
+    fontWeight: "500",
     textAlign: "center",
     marginTop: 20,
   },

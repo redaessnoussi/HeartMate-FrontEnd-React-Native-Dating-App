@@ -1,22 +1,25 @@
 import { StyleSheet, Text, View } from "react-native";
 import Checkbox from "expo-checkbox";
 import React, { useLayoutEffect, useState } from "react";
-import Colors from "../../../../constants/Colors";
+import Colors from "../../../constants/Colors";
 import { useNavigation, useRouter } from "expo-router";
-import CustomInput from "../../../../components/Customs/CustomInput/CustomInput";
-import CustomButton from "../../../../components/Customs/CustomButton/CustomButton";
+import CustomInput from "../../Customs/CustomInput/CustomInput";
+import CustomButton from "../../Customs/CustomButton/CustomButton";
+import { useAuth } from "../../../context/auth";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("test@test.com");
   const [password, setPassword] = useState("testtest");
   const [isChecked, setChecked] = useState(false);
+  const { signIn } = useAuth();
   const navigation = useNavigation();
   const router = useRouter();
 
-  const homePage = "/(tabs)";
+  const homePage = "/(main)/(tabs)";
 
   const goHomePage = () => {
     console.log("Go to Home Page");
+    signIn();
     router.push(homePage);
   };
 
@@ -94,7 +97,6 @@ const styles = StyleSheet.create({
   },
   forgetPasswordText: {
     color: Colors.red,
-    fontFamily: "PoppinsRegular",
     fontSize: 12,
   },
 });

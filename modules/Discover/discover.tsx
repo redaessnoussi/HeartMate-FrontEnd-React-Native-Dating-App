@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Text, Animated, PanResponder } from "react-native";
-import Colors from "../../../constants/Colors";
-import ImageCard from "../../../components/Discover/ImageCard/ImageCard";
+import Colors from "../../constants/Colors";
+import ImageCard from "../../components/Discover/ImageCard/ImageCard";
 import { useAnimatedStyle } from "react-native-reanimated";
 
 interface DiscoverProps {
