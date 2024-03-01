@@ -3,6 +3,18 @@ module.exports = function (api) {
   return {
     presets: ["babel-preset-expo"],
     plugins: [
+      [
+        "module-resolver",
+        {
+          alias: {
+            components: "./components",
+            screens: "./screens",
+            constants: "./constants",
+            context: "./context",
+            assets: "./assets",
+          },
+        },
+      ],
       // Required for expo-router
       "expo-router/babel",
       "@babel/plugin-proposal-export-namespace-from",
