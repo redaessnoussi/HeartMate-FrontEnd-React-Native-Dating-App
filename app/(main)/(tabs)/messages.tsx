@@ -9,9 +9,9 @@ import {
   View,
 } from "react-native";
 import React, { useState } from "react";
-import Colors from "../../../constants/Colors";
+import Colors from "constants/Colors";
 import { AntDesign, FontAwesome5, SimpleLineIcons } from "@expo/vector-icons";
-import MessageOverview from "../../../components/Message/MessageOverview/MessageOverview";
+import MessageOverview from "components/MessageScreen/MessageOverview/MessageOverview";
 import { useNavigation } from "expo-router";
 
 const messagesTab = () => {
@@ -23,7 +23,7 @@ const messagesTab = () => {
     {
       firstName: "John",
       lastName: "Doe",
-      imgProfile: require("../../../assets/images/man-face-1.jpg"),
+      imgProfile: require("assets/images/man-face-1.jpg"),
       message: {
         text: "Hello, how are you?",
         timestamp: "12:30 PM",
@@ -33,13 +33,13 @@ const messagesTab = () => {
       story: {
         hasStory: true,
         type: "image",
-        uri: require("../../../assets/images/story.jpg"),
+        uri: require("assets/images/story.jpg"),
       },
     },
     {
       firstName: "Jane",
       lastName: "Doe",
-      imgProfile: require("../../../assets/images/woman-face-1.jpg"),
+      imgProfile: require("assets/images/woman-face-1.jpg"),
       message: {
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         timestamp: "1:45 PM",
@@ -55,7 +55,7 @@ const messagesTab = () => {
     {
       firstName: "Alice",
       lastName: "Smith",
-      imgProfile: require("../../../assets/images/man-face-2.jpg"),
+      imgProfile: require("assets/images/man-face-2.jpg"),
       message: {
         text: "Hey there!",
         timestamp: "2:15 PM",
@@ -65,13 +65,13 @@ const messagesTab = () => {
       story: {
         hasStory: true,
         type: "image",
-        uri: require("../../../assets/images/story.jpg"),
+        uri: require("assets/images/story.jpg"),
       },
     },
     {
       firstName: "Bob",
       lastName: "Johnson",
-      imgProfile: require("../../../assets/images/woman-face-2.jpg"),
+      imgProfile: require("assets/images/woman-face-2.jpg"),
       message: {
         text: "Good morning!",
         timestamp: "8:00 AM",
@@ -81,13 +81,13 @@ const messagesTab = () => {
       story: {
         hasStory: true,
         type: "image",
-        uri: require("../../../assets/images/story.jpg"),
+        uri: require("assets/images/story.jpg"),
       },
     },
     {
       firstName: "Michael",
       lastName: "Williams",
-      imgProfile: require("../../../assets/images/man-face-3.jpg"),
+      imgProfile: require("assets/images/man-face-3.jpg"),
       message: {
         text: "How's your day going?",
         timestamp: "10:20 AM",
@@ -103,7 +103,7 @@ const messagesTab = () => {
     {
       firstName: "Emma",
       lastName: "Brown",
-      imgProfile: require("../../../assets/images/man-face-1.jpg"),
+      imgProfile: require("assets/images/man-face-1.jpg"),
       message: {
         text: "See you later!",
         timestamp: "5:30 PM",
@@ -113,13 +113,13 @@ const messagesTab = () => {
       story: {
         hasStory: true,
         type: "image",
-        uri: require("../../../assets/images/story.jpg"),
+        uri: require("assets/images/story.jpg"),
       },
     },
     {
       firstName: "William",
       lastName: "Wilson",
-      imgProfile: require("../../../assets/images/woman-face-1.jpg"),
+      imgProfile: require("assets/images/woman-face-1.jpg"),
       message: {
         text: "I have a question.",
         timestamp: "9:10 AM",
@@ -129,13 +129,13 @@ const messagesTab = () => {
       story: {
         hasStory: true,
         type: "image",
-        uri: require("../../../assets/images/story.jpg"),
+        uri: require("assets/images/story.jpg"),
       },
     },
     {
       firstName: "Olivia",
       lastName: "Anderson",
-      imgProfile: require("../../../assets/images/man-face-2.jpg"),
+      imgProfile: require("assets/images/man-face-2.jpg"),
       message: {
         text: "What's up?",
         timestamp: "3:40 PM",
@@ -151,7 +151,7 @@ const messagesTab = () => {
     {
       firstName: "James",
       lastName: "Martinez",
-      imgProfile: require("../../../assets/images/woman-face-2.jpg"),
+      imgProfile: require("assets/images/woman-face-2.jpg"),
       message: {
         text: "Can you help me with this?",
         timestamp: "11:55 AM",
@@ -167,7 +167,7 @@ const messagesTab = () => {
     {
       firstName: "Sophia",
       lastName: "Taylor",
-      imgProfile: require("../../../assets/images/man-face-3.jpg"),
+      imgProfile: require("assets/images/man-face-3.jpg"),
       message: {
         text: "Thanks!",
         timestamp: "6:20 PM",
@@ -177,7 +177,7 @@ const messagesTab = () => {
       story: {
         hasStory: true,
         type: "image",
-        uri: require("../../../assets/images/story.jpg"),
+        uri: require("assets/images/story.jpg"),
       },
     },
   ];

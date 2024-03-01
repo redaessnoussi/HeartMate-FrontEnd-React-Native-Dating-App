@@ -1,9 +1,9 @@
 import { Text, TextInput, View } from "react-native";
 import React, { useCallback, useState } from "react";
-import Colors from "../../../constants/Colors";
+import Colors from "constants/Colors";
 import { Picker } from "@react-native-picker/picker";
-import CustomInput from "../../Customs/CustomInput/CustomInput";
-import CustomButton from "../../Customs/CustomButton/CustomButton";
+import CustomInput from "components/Customs/CustomInput/CustomInput";
+import CustomButton from "components/Customs/CustomButton/CustomButton";
 
 const RegisterForm = () => {
   const [name, setName] = useState("");

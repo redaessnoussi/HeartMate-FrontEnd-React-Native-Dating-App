@@ -8,7 +8,7 @@ import {
   TextStyle,
 } from "react-native";
 import * as IconTypes from "@expo/vector-icons"; // Assuming you have different icon libraries
-import Colors from "../../../constants/Colors";
+import Colors from "constants/Colors";
 
 const btnSmall: ViewStyle = {
   justifyContent: "center",

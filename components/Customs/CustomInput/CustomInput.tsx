@@ -7,7 +7,7 @@ import {
   View,
 } from "react-native";
 import React, { useState } from "react";
-import Colors from "../../../constants/Colors";
+import Colors from "constants/Colors";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 interface InputProps {

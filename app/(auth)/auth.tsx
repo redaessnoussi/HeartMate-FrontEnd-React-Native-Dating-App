@@ -1,6 +1,5 @@
-import { View, Text } from "react-native";
 import React from "react";
-import SplashPage from "../../modules/SplashPage/SplashPage";
+import SplashPage from "screens/SplashScreen/SplashPage";
 
 const AuthPage = () => {
   return <SplashPage />;

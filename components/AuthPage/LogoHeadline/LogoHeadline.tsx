@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import Colors from "../../../constants/Colors";
+import Colors from "constants/Colors";
 
 const LogoHeadline = () => {
   return (
@@ -12,7 +12,7 @@ const LogoHeadline = () => {
     >
       {/* Logo Image */}
       <Image
-        source={require("../../../assets/images/logo-2.png")}
+        source={require("assets/images/logo-2.png")}
         style={{ width: 100, height: 100 }}
       />
       {/* Logo Header */}

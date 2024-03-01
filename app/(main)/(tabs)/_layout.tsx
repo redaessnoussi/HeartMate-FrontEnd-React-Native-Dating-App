@@ -1,12 +1,12 @@
 import { Tabs } from "expo-router";
 import { Animated, Text, TouchableOpacity } from "react-native";
-// import SplashPage from "../modules/SplashPage/SplashPage";
+
 import {
   FontAwesome5,
   MaterialCommunityIcons,
   Octicons,
 } from "@expo/vector-icons";
-import Colors from "../../../constants/Colors";
+import Colors from "constants/Colors";
 import { useEffect, useRef } from "react";
 
 interface MenuItem {

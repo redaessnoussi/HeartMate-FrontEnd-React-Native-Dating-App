@@ -1,6 +1,6 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
-import { Slot, Stack } from "expo-router";
-import { AuthProvider } from "../context/auth";
+import React from "react";
+import { Slot } from "expo-router";
+import { AuthProvider } from "context/auth";
 
 export default function RootLayout() {
   return (

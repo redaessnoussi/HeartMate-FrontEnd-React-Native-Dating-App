@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
 import Checkbox from "expo-checkbox";
 import React, { useLayoutEffect, useState } from "react";
-import Colors from "../../../constants/Colors";
+import Colors from "constants/Colors";
 import { useNavigation, useRouter } from "expo-router";
-import CustomInput from "../../Customs/CustomInput/CustomInput";
-import CustomButton from "../../Customs/CustomButton/CustomButton";
-import { useAuth } from "../../../context/auth";
+import CustomInput from "components/Customs/CustomInput/CustomInput";
+import CustomButton from "components/Customs/CustomButton/CustomButton";
+import { useAuth } from "context/auth";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("test@test.com");

@@ -1,28 +1,81 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import React from "react";
+import { View, ScrollView, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import LoginForm from "components/AuthPage/LoginForm/LoginForm";
+import RegisterForm from "components/AuthPage/RegisterForm/RegisterForm";
 import Colors from "constants/Colors";
-import { FontAwesome5, FontAwesome } from "@expo/vector-icons";
+import LogoHeadline from "components/AuthPage/LogoHeadline/LogoHeadline";
+import CustomButton from "components/Customs/CustomButton/CustomButton";
+import SocialMediaLogin from "components/AuthPage/SocialMediaLogin/SocialMediaLogin";
 
-const SocialMediaLogin = () => {
+const AuthPage = () => {
+  const [showLoginForm, setShowLoginForm] = useState(true);
+
+  const handleFormChange = (newValue: boolean) => {
+    setShowLoginForm(newValue);
+  };
+
   return (
-    <View style={styles.socialLoginContainer}>
-      <Text style={styles.socialLoginText}>Or continue with</Text>
+    <ScrollView
+      contentContainerStyle={{ flexGrow: 1 }}
+      keyboardShouldPersistTaps="handled"
+      style={{ flex: 1 }}
+    >
+      <View
+        style={{
+          flex: 1,
+          paddingHorizontal: 32,
+          paddingVertical: 48,
+          backgroundColor: Colors.white,
+        }}
+      >
+        {/* Logo & Headline */}
+        <LogoHeadline />
 
-      <View style={styles.socialButtonsContainer}>
-        <TouchableOpacity style={styles.socialButton}>
-          <FontAwesome5 name="google" size={24} color={Colors.darkPink} />
-          <Text style={styles.socialButtonText}>Google</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.socialButton}>
-          <FontAwesome name="facebook" size={24} color={Colors.darkPink} />
-          <Text style={styles.socialButtonText}>Facebook</Text>
-        </TouchableOpacity>
+        {/* Login & Register Buttons */}
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <CustomButton
+            btnColor={showLoginForm ? "primary" : "secondary"}
+            btnSize="md"
+            text="Login"
+            onPress={() => handleFormChange(true)}
+          />
+
+          <CustomButton
+            btnColor={!showLoginForm ? "primary" : "secondary"}
+            btnSize="md"
+            text="Register"
+            onPress={() => handleFormChange(false)}
+          />
+        </View>
+
+        {/* Horizontal Barrier */}
+        <View style={styles.horizontalBar} />
+
+        {showLoginForm ? (
+          <>
+            {/* Login Form */}
+            <LoginForm />
+          </>
+        ) : (
+          <>
+            {/* Registration Form */}
+            <RegisterForm />
+          </>
+        )}
+
+        {/* Social Media Login */}
+        <SocialMediaLogin />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
-export default SocialMediaLogin;
+export default AuthPage;
 
 const styles = StyleSheet.create({
   loginButton: {
